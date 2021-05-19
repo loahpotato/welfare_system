@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.welfarehomesmanagementsystem">
 
     <application
@@ -9,6 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
+        <activity android:name=".AccountActivity"
+            tools:ignore="Instantiatable"></activity>
+        <activity android:name=".FunctionsActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".HomeActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".SettingActivity"
+            tools:ignore="Instantiatable" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
