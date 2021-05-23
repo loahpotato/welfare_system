@@ -10,13 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".AccountActivity"
-            tools:ignore="Instantiatable"></activity>
-        <activity android:name=".FunctionsActivity"
+        <activity android:name=".AboutUsActivity"></activity>
+        <activity
+            android:name=".AccountActivity"
             tools:ignore="Instantiatable" />
-        <activity android:name=".HomeActivity"
+        <activity
+            android:name=".FunctionsActivity"
             tools:ignore="Instantiatable" />
-        <activity android:name=".SettingActivity"
+        <activity
+            android:name=".HomeActivity"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".SettingActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".MainActivity">
             <intent-filter>

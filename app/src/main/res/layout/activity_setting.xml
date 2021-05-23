@@ -15,21 +15,19 @@
 
     </LinearLayout>
         <TextView
-            android:id="@+id/about"
+            android:id="@+id/aboutus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:background="@color/white"
             android:text="About us"
-            android:textSize="30dp"
-
-            />
+            android:textSize="30dp"/>
         <TextView
             android:id="@+id/policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_below="@+id/about"
+            android:layout_below="@+id/aboutus"
             android:background="@color/white"
             android:text="Policy"
             android:textSize="30dp"

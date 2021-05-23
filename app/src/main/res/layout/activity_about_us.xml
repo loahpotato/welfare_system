@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUsActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_width="41dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_baseline_arrow_back_ios_24"></ImageButton>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="25dp"
+        android:text="About us"
+        android:textSize="30dp"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company name:"
+        android:textSize="20dp"
+        android:textColor="@color/black"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arimama"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"></TextView>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact:"
+        android:textSize="20dp"
+        android:textColor="@color/black"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+86 18860190917"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"></TextView>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address:"
+        android:textSize="20dp"
+        android:textColor="@color/black"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我丢"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"></TextView>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Core values:"
+        android:textSize="20dp"
+        android:textColor="@color/black"></TextView>
+
+    <TextView
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Customers first, employees second, shareholders third"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Simple because of trust"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="The best performance today is the lowest standard tomorrow"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logo:"
+        android:textSize="20dp"
+        android:textColor="@color/black"></TextView>
+    <ImageView
+        android:layout_width="181dp"
+        android:layout_height="129dp"
+        android:layout_gravity="center"
+        android:background="@mipmap/company_logo">
+    </ImageView>
+
+
+
+
+
+</LinearLayout>
+
+</RelativeLayout>
