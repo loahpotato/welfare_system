@@ -1,9 +1,13 @@
 package com.example.welfarehomesmanagementsystem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -15,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //隐藏默认标题栏
+        ActionBar actionbar = getSupportActionBar();
+        if(actionbar!=null)
+            actionbar.hide();
 
         BottomNavigationView bottomNavi = findViewById(R.id.navigation_bottom);
         bottomNavi.setOnNavigationItemSelectedListener(naviListener);
@@ -38,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-            return false;
+            return true;
         }
     };
 }
