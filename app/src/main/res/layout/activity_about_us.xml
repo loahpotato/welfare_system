@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutUsActivity">
-<LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -48,11 +51,13 @@
         android:textSize="20dp"
         android:textColor="@color/black"></TextView>
     <TextView
+        android:id="@+id/contactnum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+86 18860190917"
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
+        android:background="@drawable/underline"
         android:layout_gravity="center"></TextView>
     <TextView
         android:layout_marginTop="10dp"
@@ -114,10 +119,6 @@
         android:background="@mipmap/company_logo">
     </ImageView>
 
-
-
-
-
 </LinearLayout>
-
+    </ScrollView>
 </RelativeLayout>
