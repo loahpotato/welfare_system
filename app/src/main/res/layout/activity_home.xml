@@ -7,26 +7,31 @@
     android:orientation="vertical"
     android:id="@+id/home"
     tools:context=".HomeActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/title" />
+        <include layout="@layout/search_layout" />
+    </FrameLayout>
 
-    <include layout="@layout/title" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:layout_gravity="fill_horizontal"
             android:scaleType="fitXY"
-
-            android:src="@mipmap/bg_2"/>
+            android:src="@mipmap/bg_3"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
         <LinearLayout
             android:layout_width="350dp"
-            android:layout_height="280dp"
-            android:layout_marginTop="80dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="100dp"
             android:layout_gravity="center"
             android:background="@drawable/home_outline_rectangle"
             android:orientation="vertical">
@@ -34,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -45,15 +50,14 @@
             <View
                 android:layout_width="285dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_gravity="center"
                 android:background="@color/gray"/>
 
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="330dp"
                 android:layout_height="210dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_gravity="center"
                 android:padding="5dp"
                 app:rowCount="2"
@@ -162,7 +166,7 @@
 
                     <TextView
                         style="@style/home_button_text_style"
-                        android:text="Residents\nRegistration" />
+                        android:text="Residents\nRegister" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -173,11 +177,11 @@
                     <ImageButton
                         android:id="@+id/home_homeless_care"
                         style="@style/home_button_style"
-                        android:src="@drawable/ic_twotone_homeless" />
+                        android:src="@mipmap/ic_shelter" />
 
                     <TextView
                         style="@style/home_button_text_style"
-                        android:text="Homeless Care" />
+                        android:text="Homeless\nCare" />
                 </LinearLayout>
 
             </androidx.gridlayout.widget.GridLayout>
@@ -201,6 +205,7 @@
                 android:layout_gravity="center"
                 android:background="@color/gray"/>
             <ImageView
+                android:id="@+id/covid"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="top"
