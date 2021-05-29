@@ -3,7 +3,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle" >
-            <solid android:color="#FFFFFF" />
+            <solid android:color="#0DFFFFFF" />
             <corners android:radius="5dp" />
         </shape>
     </item>
@@ -14,7 +14,7 @@
         android:bottom="2dp"
         android:right="2dp">
         <shape android:shape="rectangle" >
-            <solid android:color="#F3F3F3" />
+            <solid android:color="#1AE6E6E6" />
             <corners android:radius="10dp" />
         </shape>
     </item>
@@ -25,7 +25,7 @@
         android:bottom="4dp"
         android:right="4dp">
         <shape android:shape="rectangle" >
-            <solid android:color="#E1E1E1" />
+            <solid android:color="#33CFCFCF" />
             <corners android:radius="10dp" />
         </shape>
     </item>
@@ -36,7 +36,7 @@
         android:bottom="5dp"
         android:right="5dp">
         <shape android:shape="rectangle" >
-            <solid android:color="#C5C5C5" />
+            <solid android:color="#59BCBCBC" />
             <corners android:radius="15dp" />
         </shape>
     </item>
@@ -47,7 +47,7 @@
         android:bottom="7dp"
         android:right="7dp">
         <shape android:shape="rectangle" >
-            <solid android:color="#B5B5B5" />
+            <solid android:color="#80A6A6A6" />
             <corners android:radius="15dp" />
         </shape>
     </item>
@@ -60,7 +60,7 @@
         <shape android:shape="rectangle" >
             <!-- 填充颜色 -->
             <solid android:color="@android:color/white" />
-            <stroke android:color="#A1A1A1"
+            <stroke android:color="#9A9A9A"
                 android:width="1dp" />
             <!-- 矩形的圆角半径 -->
             <corners android:radius="15dp" />
