@@ -30,7 +30,7 @@
                 android:textSize="18sp"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:hint="Search for..."/>
+                android:hint="Search for services..."/>
 
             <ImageView
                 android:visibility="gone"

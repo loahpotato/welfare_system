@@ -1,5 +1,6 @@
 package com.example.welfarehomesmanagementsystem;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +15,10 @@ public class AboutUsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+        //隐藏默认标题栏
+        ActionBar actionbar = getSupportActionBar();
+        if(actionbar!=null)
+            actionbar.hide();
 
         TextView contactNum = (TextView) findViewById(R.id.contactnum);
         contactNum.setOnClickListener(new View.OnClickListener() {

@@ -7,23 +7,30 @@
     android:orientation="vertical"
     android:id="@+id/home"
     tools:context=".HomeActivity">
+
     <FrameLayout
+        android:id="@+id/home_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <include layout="@layout/title" />
         <include layout="@layout/search_layout" />
     </FrameLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
+
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:layout_gravity="fill_horizontal"
             android:scaleType="fitXY"
             android:src="@mipmap/bg_3"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -190,13 +197,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="COVID-19 Tips"
+                android:text="COVID-19 Prevention Tips"
                 android:textSize="18sp"/>
             <View
                 android:layout_width="350dp"
@@ -212,7 +219,9 @@
                 android:src="@mipmap/covid_prevention"/>
     </LinearLayout>
     </LinearLayout>
+
     </RelativeLayout>
+    </ScrollView>
 
 
 
