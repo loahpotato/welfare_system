@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         if(actionbar!=null)
             actionbar.hide();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeActivity()).commit();
         BottomNavigationView bottomNavi = findViewById(R.id.navigation_bottom);
         bottomNavi.setOnNavigationItemSelectedListener(naviListener);
     }

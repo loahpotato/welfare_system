@@ -20,8 +20,8 @@
         <item name="android:maxWidth">70dp</item>
     </style>
     <style name="home_button_style">
-        <item name="android:layout_width">53dp</item>
-        <item name="android:layout_height">53dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:padding">5dp</item>
         <item name="android:scaleType">fitCenter</item>
