@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PolicyActivity">
+    <com.example.welfarehomesmanagementsystem.Layout.TitleLayout
+        android:id="@+id/policy_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_below="@+id/policy_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Policy"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="25dp"
+            android:textSize="30dp"
+            android:textColor="@color/black"></TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Data protect and privacy:\nWe collect mobile locations and usage histories from users to analysis their using habits and provide more humanized services. We follow the guidelines listed in the Standard certification of information protection under the Companies Commission of Malaysia (SSM) via the SSM BizTrust program. We are sure that the confidentiality of users’ information is guaranteed."></TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Trademark:\nThe application icons/pictures are designed by Arimama. When sharing items from the app, such as pictures, they will be combined with the watermark and logo of Arimama."></TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Contract policy:\nWe guarantee that we do not leak users’ information. On the other hand, users also agree to not try and illegally obtain or share any other users’ information for profit."></TextView>
+    </LinearLayout>
+</RelativeLayout>
