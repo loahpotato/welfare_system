@@ -19,10 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //隐藏默认标题栏
-        ActionBar actionbar = getSupportActionBar();
-        if(actionbar!=null)
-            actionbar.hide();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeActivity()).commit();
         BottomNavigationView bottomNavi = findViewById(R.id.navigation_bottom);

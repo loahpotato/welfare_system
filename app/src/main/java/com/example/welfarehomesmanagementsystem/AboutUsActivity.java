@@ -19,10 +19,6 @@ public class AboutUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
         TitleLayout t=findViewById(R.id.aboutus_title);
         t.setT(R.string.aboutUs);
-        //隐藏默认标题栏
-        ActionBar actionbar = getSupportActionBar();
-        if(actionbar!=null)
-            actionbar.hide();
 
         TextView contactNum = (TextView) findViewById(R.id.contactnum);
         contactNum.setOnClickListener(new View.OnClickListener() {
