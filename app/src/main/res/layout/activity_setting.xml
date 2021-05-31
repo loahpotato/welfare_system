@@ -7,42 +7,86 @@
     tools:context=".SettingActivity">
 
     <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:orientation="vertical"
->
-
-    </LinearLayout>
+        android:orientation="vertical">
         <TextView
-            android:id="@+id/aboutus"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:background="@color/white"
+            android:text="Setting"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"></TextView>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:paddingStart="20dp"
+            android:background="@drawable/outline_rectangle"
+            android:orientation="horizontal"
+            android:layout_width="350dp"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/aboutus"></ImageView>
+        <TextView
+            android:layout_marginStart="25dp"
+            android:id="@+id/aboutus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="About us"
             android:textSize="30dp"/>
+            <ImageView
+                android:layout_marginStart="100sp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/blue_arrow"
+                android:layout_gravity="center"></ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/outline_rectangle"
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:src="@mipmap/policy"></ImageView>
         <TextView
+            android:layout_marginStart="18dp"
             android:id="@+id/policy"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/aboutus"
-            android:background="@color/white"
             android:text="Policy"
-            android:textSize="30dp"
-            />
+            android:textSize="30dp"/>
+        <ImageView
+            android:layout_marginStart="140sp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/blue_arrow"
+            android:layout_gravity="center"></ImageView>
+    </LinearLayout>
         <Button
             android:id="@+id/Exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginStart="160dp"
-            android:layout_below="@+id/policy"
             android:background="@color/white"
             android:text="Exit"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp"/>
+    </LinearLayout>
 
 
 
