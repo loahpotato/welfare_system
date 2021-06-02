@@ -122,8 +122,9 @@
             <ImageView
                 android:layout_width="40sp"
                 android:layout_height="40sp"
+                android:layout_gravity="center"
                 android:layout_marginStart="25dp"
-                android:src="@mipmap/values"></ImageView>
+                android:src="@mipmap/corevalues"></ImageView>
     <TextView
         android:layout_width="244dp"
         android:layout_height="wrap_content"
