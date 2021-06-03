@@ -1,16 +1,15 @@
-package com.example.welfarehomesmanagementsystem;
+package com.example.welfarehomesmanagementsystem.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.annotation.SuppressLint;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
+import com.example.welfarehomesmanagementsystem.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,11 +18,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityCollecctor.addActivity(this);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeActivity()).commit();
         BottomNavigationView bottomNavi = findViewById(R.id.navigation_bottom);
         bottomNavi.setOnNavigationItemSelectedListener(naviListener);
     }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        ActivityCollecctor.removeActivity(this);
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener naviListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {

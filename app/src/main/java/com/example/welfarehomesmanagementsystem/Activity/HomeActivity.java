@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem;
+package com.example.welfarehomesmanagementsystem.Activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.welfarehomesmanagementsystem.homefunction.CovidTips;
+import com.example.welfarehomesmanagementsystem.HomeFunction.CovidTips;
+import com.example.welfarehomesmanagementsystem.R;
 
 
 public class HomeActivity extends Fragment{

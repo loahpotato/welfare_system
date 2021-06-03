@@ -12,28 +12,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".PolicyActivity"></activity>
-        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".Activity.PolicyActivity"></activity>
+        <activity android:name=".Activity.AboutUsActivity" />
         <activity
-            android:name=".AccountActivity"
+            android:name=".Activity.AccountActivity"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".FunctionsActivity"
+            android:name=".Activity.FunctionsActivity"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activity.HomeActivity"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".Activity.SettingActivity"
             tools:ignore="Instantiatable" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".homefunction.CovidTips" />
+        <activity android:name=".HomeFunction.CovidTips" />
     </application>
 
 </manifest>

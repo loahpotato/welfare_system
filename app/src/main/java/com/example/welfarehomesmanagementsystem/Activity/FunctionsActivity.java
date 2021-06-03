@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem;
+package com.example.welfarehomesmanagementsystem.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.welfarehomesmanagementsystem.R;
 
 public class FunctionsActivity extends Fragment {
     @Nullable

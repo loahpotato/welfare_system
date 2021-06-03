@@ -4,95 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingActivity">
+    tools:context=".Activity.SettingActivity">
+    <include
+        android:id="@+id/setting_title"
+        layout="@layout/title" />
 
     <LinearLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_title"
+        android:layoutAnimation="@anim/fragment_open">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/blue_bg">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textSize="31sp"
+                android:textColor="#80000000"
+                android:fontFamily="sans-serif-black"
+                android:text="Settings"
+                />
         <TextView
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Setting"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp"></TextView>
+            android:layout_gravity="left"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:text="Settings"
+            />
+        </FrameLayout>
+
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:paddingStart="20dp"
-            android:background="@drawable/outline_rectangle"
-            android:orientation="horizontal"
-            android:layout_width="350dp"
-            android:layout_height="50dp">
+            style="@style/setting_layout_style"
+            android:layout_marginTop="70dp">
+
             <ImageView
-                android:layout_marginTop="5dp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/aboutus"></ImageView>
-        <TextView
-            android:layout_marginStart="25dp"
-            android:id="@+id/aboutus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="About us"
-            android:textSize="30dp"/>
-            <ImageView
-                android:layout_marginStart="100sp"
+                android:layout_gravity="center"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/blue_arrow"
-                android:layout_gravity="center"></ImageView>
-    </LinearLayout>
+                android:src="@mipmap/aboutus" />
+            <TextView
+                android:id="@+id/aboutus"
+                style="@style/setting_page_text"
+                android:text="About us" />
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/outline_rectangle"
-        android:orientation="horizontal"
-        android:layout_width="350dp"
-        android:layout_height="50dp">
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
-            android:layout_width="65dp"
-            android:layout_height="55dp"
-            android:src="@mipmap/policy"></ImageView>
-        <TextView
-            android:layout_marginStart="18dp"
-            android:id="@+id/policy"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Policy"
-            android:textSize="30dp"/>
-        <ImageView
-            android:layout_marginStart="140sp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@mipmap/blue_arrow"
-            android:layout_gravity="center"></ImageView>
-    </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginStart="70sp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/blue_arrow"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/setting_layout_style">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:src="@mipmap/policy"/>
+            <TextView
+                android:id="@+id/policy"
+                style="@style/setting_page_text"
+                android:text="Policy"/>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginStart="70sp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/blue_arrow"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/setting_layout_style">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_help_outline_24"/>
+            <TextView
+                android:id="@+id/help"
+                style="@style/setting_page_text"
+                android:text="Help"/>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginStart="70sp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/blue_arrow"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/setting_layout_style">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_fiber_new_24"/>
+            <TextView
+                android:id="@+id/Version"
+                style="@style/setting_page_text"
+                android:text="Version"/>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginStart="70sp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/blue_arrow"/>
+        </LinearLayout>
+
         <Button
             android:id="@+id/Exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:layout_marginStart="155dp"
-            android:background="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
             android:text="Exit"
-            android:textSize="20dp"/>
+            android:textSize="20sp"
+            app:backgroundTint="@color/light_red"/>
+
+
+
     </LinearLayout>
-
-
-
-
-
-
-
-
+    </LinearLayout>
 </RelativeLayout>

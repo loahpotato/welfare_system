@@ -1,9 +1,8 @@
-package com.example.welfarehomesmanagementsystem.homefunction;
+package com.example.welfarehomesmanagementsystem.HomeFunction;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 

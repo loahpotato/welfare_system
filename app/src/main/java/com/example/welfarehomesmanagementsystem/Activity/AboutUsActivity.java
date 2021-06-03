@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem;
+package com.example.welfarehomesmanagementsystem.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.welfarehomesmanagementsystem.Layout.TitleLayout;
+import com.example.welfarehomesmanagementsystem.R;
 
 public class AboutUsActivity extends AppCompatActivity {
 
