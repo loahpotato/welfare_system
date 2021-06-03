@@ -31,15 +31,20 @@
         android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layoutAnimation="@anim/alpha_change">
 
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutAnimation="@anim/fragment_down">
         <ImageView
-
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:layout_gravity="fill_horizontal"
             android:scaleType="fitXY"
             android:src="@mipmap/bg_3"/>
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
