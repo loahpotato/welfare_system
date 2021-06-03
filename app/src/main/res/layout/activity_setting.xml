@@ -32,19 +32,18 @@
                 android:textSize="31sp"
                 android:textColor="#80000000"
                 android:fontFamily="sans-serif-black"
-                android:text="Settings"
-                />
-        <TextView
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:fontFamily="sans-serif-black"
-            android:text="Settings"
-            />
+                android:text="Settings" />
+
+            <TextView
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-black"
+                android:text="Settings" />
         </FrameLayout>
 
         <LinearLayout
@@ -63,7 +62,7 @@
 
             <ImageView
                 android:layout_gravity="center"
-                android:layout_marginStart="70sp"
+                android:layout_marginStart="-30dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@mipmap/blue_arrow"/>
@@ -83,7 +82,7 @@
 
             <ImageView
                 android:layout_gravity="center"
-                android:layout_marginStart="70sp"
+                android:layout_marginStart="-30dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@mipmap/blue_arrow"/>
@@ -103,7 +102,7 @@
 
             <ImageView
                 android:layout_gravity="center"
-                android:layout_marginStart="70sp"
+                android:layout_marginStart="-30dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@mipmap/blue_arrow"/>
@@ -123,7 +122,7 @@
 
             <ImageView
                 android:layout_gravity="center"
-                android:layout_marginStart="70sp"
+                android:layout_marginStart="-30dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@mipmap/blue_arrow"/>
