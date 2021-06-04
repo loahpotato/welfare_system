@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".Activity.PolicyActivity"></activity>
+        <activity android:name=".Activity.PolicyActivity" />
         <activity android:name=".Activity.AboutUsActivity" />
         <activity
             android:name=".Activity.AccountActivity"
