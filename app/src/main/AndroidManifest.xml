@@ -17,17 +17,18 @@
         <activity android:name=".Activity.PasswordModifier" />
         <activity android:name=".Activity.PolicyActivity" />
         <activity android:name=".Activity.AboutUsActivity" />
+        <activity android:name=".Activity.ProfileActivity" />
         <activity
-            android:name=".Activity.AccountActivity"
+            android:name=".Activity.Navigation.AccountActivity"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Activity.FunctionsActivity"
+            android:name=".Activity.Navigation.FunctionsActivity"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Activity.HomeActivity"
+            android:name=".Activity.Navigation.HomeActivity"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Activity.SettingActivity"
+            android:name=".Activity.Navigation.SettingActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".Activity.SignUpActivity">
             <intent-filter>

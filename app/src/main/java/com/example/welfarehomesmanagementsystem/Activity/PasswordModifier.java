@@ -1,5 +1,6 @@
 package com.example.welfarehomesmanagementsystem.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.welfarehomesmanagementsystem.DatabaseHelper;
 import com.example.welfarehomesmanagementsystem.R;
+import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 
 public class PasswordModifier extends AppCompatActivity {
     private EditText username, old_password, new_password, rePassword;
@@ -21,6 +23,8 @@ public class PasswordModifier extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_modifier);
+        TitleLayout t=findViewById(R.id.title_password_change);
+        t.setT(R.string.password_change);
 
         username = findViewById(R.id.username2);
         old_password = findViewById(R.id.old_password);

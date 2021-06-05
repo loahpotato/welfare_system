@@ -4,4 +4,6 @@
     <string name="covidTips">COVID-19 Prevention Tips</string>
     <string name="aboutUs">About Us</string>
     <string name="policy">Policy</string>
+    <string name="password_change">Change your password</string>
+    <string name="profile">Profile</string>
 </resources>

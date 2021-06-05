@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem.Activity;
+package com.example.welfarehomesmanagementsystem.Activity.Navigation;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

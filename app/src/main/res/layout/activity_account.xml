@@ -4,99 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.AccountActivity"
-    android:orientation="vertical"
-    android:background="@color/gray">
+    tools:context=".Activity.Navigation.AccountActivity"
+    android:orientation="vertical">
 
-
-    <com.example.welfarehomesmanagementsystem.widget.TitleLayout
+    <include layout="@layout/title" />
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:id="@+id/ll_portrait"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:paddingBottom="10dp"
-        android:background="@color/white">
+        android:layout_height="match_parent"
+        android:layoutAnimation="@anim/alpha_change">
+        <FrameLayout
+            android:id="@+id/profile_bg"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layoutAnimation="@anim/fragment_down">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_gravity="fill_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/blue_bg"/>
+        </FrameLayout>
 
-        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
-            android:id="@+id/ri_portrait"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/about"
-            android:layout_marginLeft="20dp"
-            />
+        <LinearLayout
+            android:id="@+id/profile_outline"
+            android:layout_width="350dp"
+            android:layout_height="280dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-160dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/home_outline_rectangle"
+            android:orientation="vertical"
+            android:layout_below="@+id/profile_bg">
 
-        <TextView
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="30dp"
+                android:paddingBottom="10dp">
+
+                <FrameLayout
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/round_line"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp">
+
+                    <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/about"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Liu"
+                        android:textColor="#424242"
+                        android:layout_marginStart="15dp"
+                        android:textSize="30sp"
+                        android:fontFamily="sans-serif-black"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:background="@color/gray" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Manager"
+                        android:textColor="@color/gray"
+                        android:layout_marginStart="15dp"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                app:columnCount="3"
+                app:rowCount="1">
+                <LinearLayout
+                    style="@style/home_layout_style"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+                    <ImageButton
+                        android:id="@+id/profile_button"
+                        style="@style/home_button_style"
+                        android:src="@drawable/ic_twotone_person_24" />
+
+                    <TextView
+                        style="@style/home_button_text_style"
+                        android:layout_marginTop="5dp"
+                        android:text="Profile" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/home_layout_style"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageButton
+                        android:id="@+id/history_button"
+                        style="@style/home_button_style"
+                        android:src="@drawable/ic_twotone_history_edu_24" />
+
+                    <TextView
+                        style="@style/home_button_text_style"
+                        android:text="History\nAffair" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/home_layout_style"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <ImageButton
+                        android:id="@+id/add_account_button"
+                        style="@style/home_button_style"
+                        android:src="@drawable/ic_twotone_supervised_user_circle_24" />
+
+                    <TextView
+                        style="@style/home_button_text_style"
+                        android:text="Add new\nEmployee" />
+                </LinearLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Liu"
-            android:textColor="@color/blue"
-            android:layout_marginLeft="20dp"
-            android:textSize="20sp"/>
+            android:layout_below="@+id/profile_outline"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="100dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:jt_visible="false"
-        app:paddingLeft="15dp"
-        app:edt_content="SWE12345678"
-        app:title="ID" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_position"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:jt_visible="false"
-        app:paddingLeft="15dp"
-        app:edt_content="Manager"
-        app:title="Positon" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:edt_content="Liu"
-        app:paddingLeft="15dp"
-        app:title="Name" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_birth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:edt_hint_content="Select your birthday"
-        app:paddingLeft="15dp"
-        app:title="Birthday" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:edt_hint_content="Select your gender"
-        app:paddingLeft="15dp"
-        app:title="Gender" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:edt_hint_content="Edit your address"
-        app:paddingLeft="15dp"
-        app:title="Adress" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:edt_hint_content="Edit your phone number"
-        app:paddingLeft="15dp"
-        app:title="Phone" />
-
-
+            <Button
+                android:id="@+id/Log_out_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Log out"
+                android:textSize="18sp"
+                app:backgroundTint="@color/light_red" />
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

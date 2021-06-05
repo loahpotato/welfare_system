@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem.Activity;
+package com.example.welfarehomesmanagementsystem.Activity.Navigation;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.welfarehomesmanagementsystem.Activity.AboutUsActivity;
+import com.example.welfarehomesmanagementsystem.Activity.PolicyActivity;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 import com.example.welfarehomesmanagementsystem.R;
 
@@ -36,7 +38,7 @@ public class SettingActivity extends Fragment {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(),AboutUsActivity.class);
+                Intent i = new Intent(getContext(), AboutUsActivity.class);
                 startActivity(i);
             }
         });
@@ -44,7 +46,7 @@ public class SettingActivity extends Fragment {
         policy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(),PolicyActivity.class);
+                Intent i = new Intent(getContext(), PolicyActivity.class);
                 startActivity(i);
             }
         });

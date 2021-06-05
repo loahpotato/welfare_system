@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-import com.example.welfarehomesmanagementsystem.Layout.TitleLayout;
+import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 import com.example.welfarehomesmanagementsystem.R;
 
 public class CovidTips extends AppCompatActivity {
