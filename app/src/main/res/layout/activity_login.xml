@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity">
+
+    <EditText
+        android:id="@+id/username1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:hint="Staff ID"/>
+
+    <EditText
+        android:id="@+id/password1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username1"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:hint="Password"
+        android:inputType="textPassword"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSignIn1"
+        android:layout_below="@+id/password1"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:text="Login"/>
+
+    <Button
+        android:id="@+id/btnForget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Password?"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:layout_below="@+id/btnSignIn1"/>
+
+</RelativeLayout>

@@ -97,15 +97,16 @@
                     android:layout_width="80dp"
                     android:text="Contact" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/contactnum"
-                android:layout_width="wrap_content"
+                android:layout_width="173dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="65dp"
                 android:layout_gravity="center"
-                android:text="+86 18860190917"
+                android:layout_marginStart="65dp"
+                android:text="+86 18576609506 Miss Niu"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -135,14 +136,15 @@
                     android:layout_width="80dp"
                     android:text="Address" />
             </LinearLayout>
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="192dp"
                 android:layout_height="wrap_content"
-                android:text="xxx"
-                android:layout_marginStart="120dp"
-                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:text="Room A1702, ChangCheng-7 Building, Shenzhen, Guangdong Province, China"
                 android:textColor="@color/black"
-                android:layout_gravity="center"/>
+                android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
