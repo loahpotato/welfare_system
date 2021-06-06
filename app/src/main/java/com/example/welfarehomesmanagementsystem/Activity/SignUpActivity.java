@@ -150,7 +150,7 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ActivityCollecctor.finishAll();
-                        Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                     }
                 });

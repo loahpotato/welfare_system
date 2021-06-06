@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 import com.example.welfarehomesmanagementsystem.DatabaseHelper;
 import com.example.welfarehomesmanagementsystem.R;
 
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ActivityCollecctor.addActivity(this);
         user = findViewById(R.id.username1);
         pass = findViewById(R.id.password1);
         signIn = findViewById(R.id.btnSignIn1);
