@@ -22,7 +22,7 @@ public class ActivityCollecctor {
         for(Activity activity : activities){
             if(!activity.isFinishing()){
                 activity.finish();
-                android.os.Process.killProcess(android.os.Process.myPid());
+                //android.os.Process.killProcess(android.os.Process.myPid());
             }
         }
         activities.clear();

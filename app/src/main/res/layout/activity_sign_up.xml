@@ -7,12 +7,17 @@
     tools:context=".Activity.SignUpActivity"
     tools:ignore="ExtraText">
 
+    <com.example.welfarehomesmanagementsystem.widget.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_sign_up"/>
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/title_sign_up"
         android:hint="Staff ID"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"/>
     <EditText
@@ -42,17 +47,17 @@
         android:layout_height="65dp"
         android:layout_below="@+id/rePassword"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="90dp"
-        android:text="Passwords must be between 6 and 16 characters long and must begin with a alphabet ! ! ! ! ! ! " />
+        android:text="Passwords must be between 6 and 16 characters long and must begin with a alphabet. " />
     />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:layout_marginTop="35dp"
+        android:text="Confirm"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"
         android:layout_below="@+id/textView"/>
@@ -60,7 +65,7 @@
         android:id="@+id/btnSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="Switch account"
         android:layout_marginTop="35dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"
