@@ -15,7 +15,7 @@ import com.example.welfarehomesmanagementsystem.R;
 import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 
 public class PasswordModifier extends AppCompatActivity {
-    private EditText username, old_password, new_password, rePassword;
+    private EditText userId, old_password, new_password, rePassword;
     private Button signIn;
     private DatabaseHelper DB;
 
@@ -26,7 +26,7 @@ public class PasswordModifier extends AppCompatActivity {
         TitleLayout t=findViewById(R.id.title_password_change);
         t.setT(R.string.password_change);
 
-        username = findViewById(R.id.username2);
+        userId = findViewById(R.id.userId2);
         old_password = findViewById(R.id.old_password);
         new_password = findViewById(R.id.new_password);
         rePassword = findViewById(R.id.repeat_new_password);
@@ -37,7 +37,7 @@ public class PasswordModifier extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
+                String user = userId.getText().toString();
                 String oldpass = old_password.getText().toString();
                 String newpass = new_password.getText().toString();
                 String repeat = rePassword.getText().toString();
@@ -50,7 +50,7 @@ public class PasswordModifier extends AppCompatActivity {
                         Toast.makeText(PasswordModifier.this,"New Password mustn't be same as Old Password !",Toast.LENGTH_LONG).show();
                     else{
                         if (newpass.equals(repeat)){
-                            boolean checkUser = DB.checkUsername(user);
+                            boolean checkUser = DB.checkUserId(user);
                             if(checkUser){
                                 boolean checkUserPass = DB.checkPassword(user,oldpass);
                                 if(checkUserPass){

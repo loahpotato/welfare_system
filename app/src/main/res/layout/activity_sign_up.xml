@@ -12,23 +12,60 @@
         android:layout_height="wrap_content"
         android:id="@+id/title_sign_up"/>
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/userId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title_sign_up"
         android:hint="Staff ID"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"/>
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:layout_below="@+id/userId" />
+    <TextView
+        android:id="@+id/textView_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="95dp"
+        android:text="Position:"
+        android:textSize="18sp" />
+    <RadioGroup
+        android:id="@+id/radioGroup_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textView_sign_up"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/radio_staff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Staff" />
+        <RadioButton
+            android:id="@+id/radio_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manager" />
+    </RadioGroup>
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"
-        android:layout_below="@+id/username"
+        android:layout_below="@+id/radioGroup_sign_up"
         android:inputType="textPassword"/>
     <EditText
         android:id="@+id/rePassword"
@@ -47,7 +84,7 @@
         android:layout_height="65dp"
         android:layout_below="@+id/rePassword"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="90dp"
         android:text="Passwords must be between 6 and 16 characters long and must begin with a alphabet. " />
     />
@@ -57,7 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirm"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"
         android:layout_below="@+id/textView"/>
@@ -66,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Switch account"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="90dp"
         android:layout_marginEnd="90dp"
         android:layout_below="@+id/btnSignUp"/>

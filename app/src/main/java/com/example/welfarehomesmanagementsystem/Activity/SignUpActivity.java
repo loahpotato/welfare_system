@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.welfarehomesmanagementsystem.R;
@@ -16,7 +18,10 @@ import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 
 public class SignUpActivity extends AppCompatActivity {
-    private EditText username, password, rePassword;
+    private EditText userId, username, password, rePassword;
+    private RadioGroup radioGroup;
+    private RadioButton staff,manager;
+    private int position = 0;
     private Button signIn, signUp;
     private com.example.welfarehomesmanagementsystem.DatabaseHelper DB;
 
@@ -27,32 +32,50 @@ public class SignUpActivity extends AppCompatActivity {
         TitleLayout t=findViewById(R.id.title_sign_up);
         t.setT(R.string.sign_up);
 
+        userId = findViewById(R.id.userId);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         rePassword = findViewById(R.id.rePassword);
+        staff = findViewById(R.id.radio_staff);
+        manager=findViewById(R.id.radio_manager);
         signIn = findViewById(R.id.btnSignIn);
         signUp = findViewById(R.id.btnSignUp);
         DB = new com.example.welfarehomesmanagementsystem.DatabaseHelper(this);
+
+        radioGroup=findViewById(R.id.radioGroup_sign_up);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (staff.getId() == checkedId) {
+                    position = 0;
+                }
+                if (manager.getId() == checkedId) {
+                    position = 1;
+                }
+            }
+        });
+
         //Sign Up function
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
+                String user = userId.getText().toString();
+                String name = username.getText().toString();
                 String pass = password.getText().toString();
                 String repeat = rePassword.getText().toString();
 
-                if(user.equals("") || pass.equals("") || repeat.equals("")){
+                if(user.equals("") || name.equals("") || pass.equals("") || repeat.equals("")){
                     Toast.makeText(SignUpActivity.this,"Please enter all fields",Toast.LENGTH_LONG).show();
                 }
                 else{
                     if (pass.equals(repeat)){
                         boolean checkUser;
-                        checkUser = DB.checkUsername(user);
+                        checkUser = DB.checkUserId(user);
                         if(!checkUser){
 
                             boolean regulation = DB.isContainAll(pass);
                             if(regulation){
-                                boolean insert = DB.insertData(user,pass);
+                                boolean insert = DB.insertData(user,name,pass,position);
                                 AlertDialog.Builder dialog = new AlertDialog.Builder(SignUpActivity.this);
                                 dialog.setTitle(R.string.sign_up);
                                 if(insert){
@@ -61,7 +84,10 @@ public class SignUpActivity extends AppCompatActivity {
                                     dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
+                                            userId.setText("");
                                             username.setText("");
+                                            staff.setChecked(true);
+                                            manager.setChecked(false);
                                             password.setText("");
                                             rePassword.setText("");
                                         }
@@ -74,7 +100,10 @@ public class SignUpActivity extends AppCompatActivity {
                                     dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
+                                            userId.setText("");
                                             username.setText("");
+                                            staff.setChecked(true);
+                                            manager.setChecked(false);
                                             password.setText("");
                                             rePassword.setText("");
                                         }
@@ -112,7 +141,10 @@ public class SignUpActivity extends AppCompatActivity {
                 dialog_switch.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        userId.setText("");
                         username.setText("");
+                        staff.setChecked(true);
+                        manager.setChecked(false);
                         password.setText("");
                         rePassword.setText("");
                     }

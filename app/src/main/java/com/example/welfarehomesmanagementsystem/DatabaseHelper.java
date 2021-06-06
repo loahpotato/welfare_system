@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Create table in database
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT)");
+        MyDB.execSQL("CREATE TABLE USERS(userId TEXT primary key, username TEXT, password TEXT, position INT DEFAULT 0, age INT, phone TEXT)");
     }
 
     //Drop the table if exists
@@ -32,11 +32,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insert data
-    public boolean insertData(String username, String password){
+    public boolean insertData(String userId, String username, String password,int position){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("userId", userId);
         contentValues.put("username", username);
         contentValues.put("password",password);
+        contentValues.put("position",position);
         long result = MyDB.insert("USERS",null,contentValues);
         if (result == -1){
             return false;
@@ -45,9 +47,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean checkUsername(String username){
+    public boolean checkUserId(String userId){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("SELECT * FROM USERS WHERE username = ?", new String[]{username});
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM USERS WHERE userId = ?", new String[]{userId});
         if (cursor.getCount() > 0){
             return true;
         }
@@ -55,9 +57,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
     }
 
-    public boolean checkPassword(String username, String password){
+    public boolean checkPassword(String userId, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("SELECT * FROM USERS WHERE username = ? and password = ?", new String[]{username,password});
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM USERS WHERE userId = ? and password = ?", new String[]{userId,password});
         if (cursor.getCount() > 0){
             return true;
         }
@@ -73,11 +75,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return isMatch;
     }
 
-    public boolean update(String name, String newpass) {
+    public boolean update(String id, String newpass) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("password",newpass);
-        MyDB.update("USERS",contentValues,"username=?",new String[]{name});
+        MyDB.update("USERS",contentValues,"userId=?",new String[]{id});
         return true;
     }
 

@@ -26,17 +26,18 @@ public class LoginActivity extends AppCompatActivity {
         signIn = findViewById(R.id.btnSignIn1);
         forgetPassword = findViewById(R.id.btnForget);
         DB = new DatabaseHelper(this);
+        DB.getReadableDatabase();
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = user.getText().toString();
+                String userId = user.getText().toString();
                 String password = pass.getText().toString();
 
-                if (username.equals("") || password.equals("")){
+                if (userId.equals("") || password.equals("")){
                     Toast.makeText(LoginActivity.this,"Please enter all fields",Toast.LENGTH_LONG).show();
                 }else{
-                    boolean checkUserPass = DB.checkPassword(username,password);
+                    boolean checkUserPass = DB.checkPassword(userId,password);
                     if(checkUserPass){
                         Toast.makeText(LoginActivity.this, "Sign in Successfully",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
