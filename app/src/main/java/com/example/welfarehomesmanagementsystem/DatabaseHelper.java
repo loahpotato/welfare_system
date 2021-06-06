@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Create table in database
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("CREATE TABLE USERS(userId TEXT primary key, username TEXT, password TEXT, position INT DEFAULT 0, age INT, phone TEXT)");
+        MyDB.execSQL("CREATE TABLE USERS(userId TEXT primary key, username TEXT, password TEXT, position INT DEFAULT 0, age INT, phone TEXT, gender TEXT)");
     }
 
     //Drop the table if exists
@@ -32,13 +32,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insert data
-    public boolean insertData(String userId, String username, String password,int position){
+    public boolean insertData(String userId, String username, String password,int position, String gender){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("userId", userId);
         contentValues.put("username", username);
         contentValues.put("password",password);
         contentValues.put("position",position);
+        contentValues.put("gender",gender);
         long result = MyDB.insert("USERS",null,contentValues);
         if (result == -1){
             return false;

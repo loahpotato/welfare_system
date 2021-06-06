@@ -19,9 +19,10 @@ import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText userId, username, password, rePassword;
-    private RadioGroup radioGroup;
-    private RadioButton staff,manager;
+    private RadioGroup radioGroup1,radioGroup2;
+    private RadioButton staff,manager,man,woman;
     private int position = 0;
+    private String gender;
     private Button signIn, signUp;
     private com.example.welfarehomesmanagementsystem.DatabaseHelper DB;
 
@@ -36,14 +37,16 @@ public class SignUpActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         rePassword = findViewById(R.id.rePassword);
+        man = findViewById(R.id.radio_man);
+        woman=findViewById(R.id.radio_woman);
         staff = findViewById(R.id.radio_staff);
         manager=findViewById(R.id.radio_manager);
         signIn = findViewById(R.id.btnSignIn);
         signUp = findViewById(R.id.btnSignUp);
         DB = new com.example.welfarehomesmanagementsystem.DatabaseHelper(this);
 
-        radioGroup=findViewById(R.id.radioGroup_sign_up);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        radioGroup1=findViewById(R.id.radioGroup_sign_up);
+        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (staff.getId() == checkedId) {
@@ -51,6 +54,19 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 if (manager.getId() == checkedId) {
                     position = 1;
+                }
+            }
+        });
+
+        radioGroup2=findViewById(R.id.radioGroup_gender);
+        radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (man.getId() == checkedId) {
+                    gender = (String) man.getText();
+                }
+                if (woman.getId() == checkedId) {
+                    gender = (String) woman.getText();
                 }
             }
         });
@@ -75,7 +91,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             boolean regulation = DB.isContainAll(pass);
                             if(regulation){
-                                boolean insert = DB.insertData(user,name,pass,position);
+                                boolean insert = DB.insertData(user,name,pass,position,gender);
                                 AlertDialog.Builder dialog = new AlertDialog.Builder(SignUpActivity.this);
                                 dialog.setTitle(R.string.sign_up);
                                 if(insert){
@@ -87,7 +103,7 @@ public class SignUpActivity extends AppCompatActivity {
                                             userId.setText("");
                                             username.setText("");
                                             staff.setChecked(true);
-                                            manager.setChecked(false);
+                                            man.setChecked(true);
                                             password.setText("");
                                             rePassword.setText("");
                                         }
@@ -103,7 +119,7 @@ public class SignUpActivity extends AppCompatActivity {
                                             userId.setText("");
                                             username.setText("");
                                             staff.setChecked(true);
-                                            manager.setChecked(false);
+                                            man.setChecked(true);
                                             password.setText("");
                                             rePassword.setText("");
                                         }
@@ -144,7 +160,7 @@ public class SignUpActivity extends AppCompatActivity {
                         userId.setText("");
                         username.setText("");
                         staff.setChecked(true);
-                        manager.setChecked(false);
+                        man.setChecked(true);
                         password.setText("");
                         rePassword.setText("");
                     }
