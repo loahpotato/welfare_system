@@ -10,13 +10,13 @@
     <include layout="@layout/title" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!--android:layoutAnimation="@anim/alpha_change"-->
+        android:layout_height="match_parent"
+        android:layoutAnimation="@anim/alpha_change">
         <FrameLayout
             android:id="@+id/procure_bg"
             android:layout_width="match_parent"
-            android:layout_height="250dp">
-            <!--android:layoutAnimation="@anim/fragment_down"-->
+            android:layout_height="250dp"
+            android:layoutAnimation="@anim/fragment_down">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
@@ -29,8 +29,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="25dp"
                 android:layout_gravity="fill_horizontal"
-                android:scaleType="fitXY"/>
-                //android:src="@mipmap/procure"/>
+                android:scaleType="fitXY"
+                android:src="@mipmap/procure"/>
         </FrameLayout>
 
         <TextView
@@ -58,6 +58,7 @@
             android:layout_below="@+id/procure_bg">
 
             <LinearLayout
+                android:id="@+id/function_health_check_button"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -132,8 +133,8 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        android:layout_gravity="center"/>
-                        //android:src="@mipmap/pro" />
+                        android:layout_gravity="center"
+                        android:src="@mipmap/pro"/>
                 </FrameLayout>
                 <LinearLayout
                     android:layout_width="match_parent"

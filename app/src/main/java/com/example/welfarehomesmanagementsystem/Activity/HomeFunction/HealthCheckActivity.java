@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem;
+package com.example.welfarehomesmanagementsystem.Activity.HomeFunction;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.welfarehomesmanagementsystem.R;
+import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 
 import java.util.Calendar;
 
@@ -17,6 +20,8 @@ public class HealthCheckActivity extends AppCompatActivity implements DatePicker
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_check);
+        TitleLayout t=findViewById(R.id.title_health_check);
+        t.setT(R.string.healthcheck);
     }
 
     @Override

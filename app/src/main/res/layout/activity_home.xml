@@ -102,7 +102,7 @@
                             app:layout_rowWeight="1">
 
                             <ImageButton
-                                android:id="@+id/home_health_check"
+                                android:id="@+id/health_check_button"
                                 style="@style/home_button_style"
                                 android:src="@mipmap/ic_health_check" />
 

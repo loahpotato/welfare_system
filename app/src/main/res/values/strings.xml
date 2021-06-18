@@ -7,4 +7,5 @@
     <string name="password_change">Change your password</string>
     <string name="profile">Profile</string>
     <string name="sign_up">Add new account</string>
+    <string name="healthcheck">Health Check Appointment</string>
 </resources>
