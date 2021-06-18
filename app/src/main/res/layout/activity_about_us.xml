@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
-                android:text="Room A1702, ChangCheng-7 Building, Shenzhen, Guangdong Province, China"
+                android:text="Room ABC, Jiliguala Building, Fuzhou, Guangdong Province, China"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
