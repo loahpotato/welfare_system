@@ -34,17 +34,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Number of patients"
+            android:text="Name"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:layout_gravity="center"/>
     </LinearLayout>
     <EditText
-        android:id="@+id/patients_number"
+        android:id="@+id/patients_name"
         android:layout_marginStart="15dp"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:hint="Please enter a number"
+        android:hint="Please enter your name"
         android:textSize="20dp"></EditText>
     <LinearLayout
         android:layout_margin="8dp"
@@ -101,42 +101,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Age range"
+            android:text="Age"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:layout_gravity="center"/>
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_marginStart="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="From"></TextView>
-        <EditText
-            android:layout_marginStart="15dp"
-            android:id="@+id/age_range1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="age 1"
-            android:textSize="20dp"></EditText>
-        <TextView
-            android:layout_marginStart="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="to"
-            android:textSize="20dp"></TextView>
-        <EditText
-            android:id="@+id/age_range2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:hint="age 2"
-            android:textSize="20dp"></EditText>
-    </LinearLayout>
+    <EditText
+        android:id="@+id/patients_age"
+        android:layout_marginStart="15dp"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:hint="Please enter your age"
+        android:textSize="20dp"></EditText>
     <LinearLayout
         android:layout_margin="8dp"
         android:layout_width="match_parent"
@@ -244,7 +220,13 @@
             android:text="No"
             android:textSize="20dp"/>
     </RadioGroup>
-
+<Button
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Submit"
+    android:textSize="20dp"
+    android:layout_gravity="center"/>
 
 
 
