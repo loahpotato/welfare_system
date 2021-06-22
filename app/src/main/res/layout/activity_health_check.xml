@@ -12,11 +12,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/title_health_check"/>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="40dp"
     android:layout_marginStart="10dp"
     android:orientation="vertical">
     <LinearLayout
@@ -180,47 +182,9 @@
             android:id="@+id/tv_select"
             android:layout_marginStart="30dp"></TextView>
     </LinearLayout>
-    <LinearLayout
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="*"
-            android:textColor="@color/red"
-            android:textSize="20dp"
-            android:layout_marginRight="10dp"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vehicle needed"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:layout_gravity="center"/>
-    </LinearLayout>
-    <RadioGroup
-        android:layout_marginStart="15dp"
-        android:id="@+id/vehicle_radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/radio_yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes"
-            android:textSize="20dp"
-            android:checked="true"/>
-        <RadioButton
-            android:id="@+id/radio_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No"
-            android:textSize="20dp"/>
-    </RadioGroup>
+
 <Button
+    android:id="@+id/healthcheck_submit"
     android:layout_marginTop="20dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -233,5 +197,6 @@
 
 
 </LinearLayout>
+</ScrollView>
 
 </LinearLayout>
