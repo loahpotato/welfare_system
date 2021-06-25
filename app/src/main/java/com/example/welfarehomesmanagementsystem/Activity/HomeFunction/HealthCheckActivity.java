@@ -1,9 +1,13 @@
 package com.example.welfarehomesmanagementsystem.Activity.HomeFunction;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -25,7 +29,7 @@ import java.util.Calendar;
 public class HealthCheckActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     EditText date,name,age,contact,hospital;
     Button submit;
-    TextView chooseDate;
+    TextView chooseDate,chooseHospital;
     private DbHelper_HealthCheck DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +41,31 @@ public class HealthCheckActivity extends AppCompatActivity implements DatePicker
         date = findViewById(R.id.appoint_date);
         age = findViewById(R.id.patients_age);
         contact = findViewById(R.id.contact_number);
-        hospital = findViewById(R.id.hospital_addr);
+        hospital = findViewById(R.id.hospital_name);
         submit = findViewById(R.id.healthcheck_submit);
         DB = new DbHelper_HealthCheck(this);
+        chooseHospital = findViewById(R.id.hospi_select);
+        chooseHospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HealthCheckActivity.this,HospitalListActivity.class);
+                startActivityForResult(i,1);
+            }
+        });
+
         AddData();
 
     };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == 3) {
+            String result = data.getStringExtra("result");
+            hospital.setText(result);
+        }
+    }
+
     public void AddData(){
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
