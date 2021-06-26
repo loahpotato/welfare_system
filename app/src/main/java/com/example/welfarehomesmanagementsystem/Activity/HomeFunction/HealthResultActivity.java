@@ -19,7 +19,7 @@ import java.util.List;
 
 public class HealthResultActivity extends AppCompatActivity {
 
-    List<HealthCheck> healthList = new ArrayList<HealthCheck>();;
+    List<HealthCheck> healthList = new ArrayList<HealthCheck>();
     private DbHelper_HealthCheck DB;
     private SharedPreferences pref;
 

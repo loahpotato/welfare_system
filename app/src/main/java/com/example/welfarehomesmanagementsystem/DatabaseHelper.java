@@ -84,4 +84,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public Cursor getUserById(String uid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM USERS WHERE userId = ?",  new String[]{uid});
+        return result;
+    }
+
 }
