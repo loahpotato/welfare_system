@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -30,7 +31,9 @@ public class HealthCheckActivity extends AppCompatActivity {
     EditText date,name,age,contact,hospital;
     Button submit;
     TextView chooseDate,chooseHospital;
+    String currentUid;
     private DbHelper_HealthCheck DB;
+    private SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +48,8 @@ public class HealthCheckActivity extends AppCompatActivity {
         hospital = findViewById(R.id.hospital_name);
         submit = findViewById(R.id.healthcheck_submit);
         DB = new DbHelper_HealthCheck(this);
-
+        pref= getSharedPreferences("CurrentUserId",MODE_PRIVATE);
+        currentUid= pref.getString("currentUserId","");
         chooseDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +90,7 @@ public class HealthCheckActivity extends AppCompatActivity {
                     Toast.makeText(HealthCheckActivity.this, "Please enter all fields", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    boolean isInserted = DB.insertData(name.getText().toString(),date.getText().toString(),age.getText().toString(),contact.getText().toString(),hospital.getText().toString());
+                    boolean isInserted = DB.insertData(name.getText().toString(),date.getText().toString(),age.getText().toString(),contact.getText().toString(),hospital.getText().toString(), currentUid);
                     if(isInserted == true)
                         Toast.makeText(HealthCheckActivity.this,"Make appoint successfully!",Toast.LENGTH_SHORT).show();
                         else

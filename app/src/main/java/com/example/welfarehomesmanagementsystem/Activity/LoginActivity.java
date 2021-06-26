@@ -3,7 +3,9 @@ package com.example.welfarehomesmanagementsystem.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +19,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText user,pass;
     private Button signIn, forgetPassword;
     private DatabaseHelper DB;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         forgetPassword = findViewById(R.id.btnForget);
         DB = new DatabaseHelper(this);
         DB.getReadableDatabase();
+        pref=getSharedPreferences("CurrentUserId",MODE_PRIVATE);
+        editor = pref.edit();
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,11 +48,14 @@ public class LoginActivity extends AppCompatActivity {
                     boolean checkUserPass = DB.checkPassword(userId,password);
                     if(checkUserPass){
                         Toast.makeText(LoginActivity.this, "Sign in Successfully",Toast.LENGTH_LONG).show();
+                        editor.putString("currentUserId",userId);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                     }else{
+                        editor.clear();
                         Toast.makeText(LoginActivity.this,"Invalid Credentials",Toast.LENGTH_LONG).show();
                     }
+                    editor.apply();
                 }
             }
         });

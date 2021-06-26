@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.CovidTips;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthCheckActivity;
+import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthResultActivity;
 import com.example.welfarehomesmanagementsystem.R;
 
 
@@ -37,7 +38,7 @@ public class HomeActivity extends Fragment{
         health.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), HealthCheckActivity.class);
+                Intent i = new Intent(getContext(), HealthResultActivity.class);
                 startActivity(i);
             }
         });

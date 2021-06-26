@@ -9,4 +9,5 @@
     <string name="sign_up">Add new account</string>
     <string name="healthcheck">Health Check Appointment</string>
     <string name="hospital_list">Hospital List</string>
+    <string name="healthresult">Health Check Results</string>
 </resources>

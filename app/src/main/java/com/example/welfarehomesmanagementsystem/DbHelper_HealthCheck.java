@@ -17,13 +17,14 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
     public static final String COLUMN_3 = "AGE";
     public static final String COLUMN_4 = "CONTACT";
     public static final String COLUMN_5 = "HOSPITAL";
+    public static final String COLUMN_6 = "STAFF";
     public DbHelper_HealthCheck(@Nullable Context context) {
         super(context,DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME+"(NAME TEXT, DATE TEXT, AGE TEXT,CONTACT TEXT,HOSPITAL TEXT)");
+        db.execSQL("create table "+TABLE_NAME+"(NAME TEXT, DATE TEXT, AGE TEXT,CONTACT TEXT,HOSPITAL TEXT, STAFF TEXT)");
     }
 
     @Override
@@ -33,7 +34,7 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         //if not exist, we can parse the onCreate method to run
         onCreate(db);
     }
-    public boolean insertData(String name,String date, String age,String contact, String hospital){
+    public boolean insertData(String name,String date, String age,String contact, String hospital, String staff){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_1,name);
@@ -41,16 +42,16 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         contentValues.put(COLUMN_3,age);
         contentValues.put(COLUMN_4,contact);
         contentValues.put(COLUMN_5,hospital);
-
+        contentValues.put(COLUMN_6,staff);
         long result = db.insert(TABLE_NAME,null,contentValues);
         if(result ==-1)
             return false;
         else
             return true;
     }
-    public Cursor getAllData(){
+    public Cursor getDataByUser(String userId){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * FROM "  + TABLE_NAME, null);
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE STAFF = ?",  new String[]{userId});
         return result;
     }
     public Integer deleteData(String name){

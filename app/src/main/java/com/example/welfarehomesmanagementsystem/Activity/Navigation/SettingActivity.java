@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +18,11 @@ import com.example.welfarehomesmanagementsystem.Activity.PolicyActivity;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 import com.example.welfarehomesmanagementsystem.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class SettingActivity extends Fragment {
     private TextView about,policy;
+    private SharedPreferences.Editor editor;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ public class SettingActivity extends Fragment {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                editor = getActivity().getSharedPreferences("CurrentUserId",MODE_PRIVATE).edit();
+                editor.clear();
+                editor.apply();
                 ActivityCollecctor.finishAll();
             }
         });

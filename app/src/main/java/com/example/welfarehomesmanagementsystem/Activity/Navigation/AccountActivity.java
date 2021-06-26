@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,17 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.welfarehomesmanagementsystem.Activity.AboutUsActivity;
+import com.example.welfarehomesmanagementsystem.Activity.LoginActivity;
 import com.example.welfarehomesmanagementsystem.Activity.ProfileActivity;
 import com.example.welfarehomesmanagementsystem.Activity.SignUpActivity;
 import com.example.welfarehomesmanagementsystem.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class AccountActivity extends Fragment {
     private ImageButton profile,addAccount;
+    private Button logout;
+    private SharedPreferences.Editor editor;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,6 +33,7 @@ public class AccountActivity extends Fragment {
         //code here
         profile = (ImageButton) view.findViewById(R.id.profile_button);
         addAccount = (ImageButton) view.findViewById(R.id.add_account_button);
+        logout=(Button)view.findViewById(R.id.Log_out_button);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +46,17 @@ public class AccountActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), SignUpActivity.class);
+                startActivity(i);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor = getActivity().getSharedPreferences("CurrentUserId",MODE_PRIVATE).edit();
+                editor.clear();
+                editor.apply();
+                Intent i = new Intent(getContext(), LoginActivity.class);
                 startActivity(i);
             }
         });
