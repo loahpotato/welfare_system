@@ -26,7 +26,7 @@ import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 
 import java.util.Calendar;
 
-public class HealthCheckActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class HealthCheckActivity extends AppCompatActivity {
     EditText date,name,age,contact,hospital;
     Button submit;
     TextView chooseDate,chooseHospital;
@@ -39,11 +39,20 @@ public class HealthCheckActivity extends AppCompatActivity implements DatePicker
         t.setT(R.string.healthcheck);
         name = findViewById(R.id.patients_name);
         date = findViewById(R.id.appoint_date);
+        chooseDate = findViewById(R.id.tv_date);
         age = findViewById(R.id.patients_age);
         contact = findViewById(R.id.contact_number);
         hospital = findViewById(R.id.hospital_name);
         submit = findViewById(R.id.healthcheck_submit);
         DB = new DbHelper_HealthCheck(this);
+
+        chooseDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickDlg();
+            }
+        });
+
         chooseHospital = findViewById(R.id.hospi_select);
         chooseHospital.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,21 +96,15 @@ public class HealthCheckActivity extends AppCompatActivity implements DatePicker
         });
     }
 
-    @Override
-    public void onDateSet(DatePicker dp,int year,int month,int day){
-        String desc = String.format("Choose a date%dYear%dMonth%dDay",year,month+1,day);
-        chooseDate = findViewById(R.id.tv_date);
-        date = findViewById(R.id.appoint_date);
-        date.setText(desc);
-        if(chooseDate.getId()==R.id.tv_date){
-            //获取实例，包含当前年月日
-            Calendar calendar = Calendar.getInstance();
-            DatePickerDialog dialog = new DatePickerDialog(this,this,
-                    calendar.get(Calendar.YEAR),
-                    calendar.get(Calendar.MARCH),
-                    calendar.get(Calendar.DAY_OF_MONTH));
-            dialog.show();
-        }
+    public void showDatePickDlg () {
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(HealthCheckActivity.this, new DatePickerDialog.OnDateSetListener() {
 
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                HealthCheckActivity.this.date.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
     }
         }
