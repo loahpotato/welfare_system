@@ -90,11 +90,15 @@ public class HealthCheckActivity extends AppCompatActivity {
                     Toast.makeText(HealthCheckActivity.this, "Please enter all fields", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    boolean isInserted = DB.insertData(name.getText().toString(),date.getText().toString(),age.getText().toString(),contact.getText().toString(),hospital.getText().toString(), currentUid);
-                    if(isInserted == true)
-                        Toast.makeText(HealthCheckActivity.this,"Make appoint successfully!",Toast.LENGTH_SHORT).show();
+                    if(DB.checkRepeat(name.getText().toString(),date.getText().toString(),hospital.getText().toString())) {
+                        boolean isInserted = DB.insertData(name.getText().toString(), date.getText().toString(), age.getText().toString(), contact.getText().toString(), hospital.getText().toString(), currentUid);
+                        if (isInserted)
+                            Toast.makeText(HealthCheckActivity.this, "Make appoint successfully!", Toast.LENGTH_SHORT).show();
                         else
-                        Toast.makeText(HealthCheckActivity.this,"Fail!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(HealthCheckActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(HealthCheckActivity.this, "Appointment cannot repeat.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

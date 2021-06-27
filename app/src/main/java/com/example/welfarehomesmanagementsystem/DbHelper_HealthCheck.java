@@ -34,6 +34,14 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         //if not exist, we can parse the onCreate method to run
         onCreate(db);
     }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        //Drop table if it's already exist
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME );
+        //if not exist, we can parse the onCreate method to run
+        onCreate(db);
+    }
     public boolean insertData(String name,String date, String age,String contact, String hospital, String staff){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -54,6 +62,17 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE STAFF = ?",  new String[]{userId});
         return result;
     }
+
+    public boolean checkRepeat(String name, String date, String hospital){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE NAME = ?",  new String[]{name});
+        while(result.moveToNext()){
+            if(result.getString(1).equals(date) && result.getString(4).equals(hospital))
+                return false;
+        }
+        return true;
+    }
+
     public Integer deleteData(String name){
         SQLiteDatabase db =getWritableDatabase();
         return db.delete(TABLE_NAME,"NAME = ?", new String[]{name});
