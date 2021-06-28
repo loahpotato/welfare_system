@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.welfarehomesmanagementsystem.Activity.AboutUsActivity;
+import com.example.welfarehomesmanagementsystem.Activity.AppVersionActivity;
 import com.example.welfarehomesmanagementsystem.Activity.PolicyActivity;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 import com.example.welfarehomesmanagementsystem.R;
@@ -21,7 +22,7 @@ import com.example.welfarehomesmanagementsystem.R;
 import static android.content.Context.MODE_PRIVATE;
 
 public class SettingActivity extends Fragment {
-    private TextView about,policy;
+    private TextView about,policy,help,version;
     private SharedPreferences.Editor editor;
     @Nullable
     @Override
@@ -39,9 +40,9 @@ public class SettingActivity extends Fragment {
             }
         });
 
-
         about = view.findViewById(R.id.aboutus);
         policy = view.findViewById(R.id.policy);
+        version = view.findViewById(R.id.Version);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +58,15 @@ public class SettingActivity extends Fragment {
                 startActivity(i);
             }
         });
+
+        version.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), AppVersionActivity.class);
+                startActivity(i);
+            }
+        });
+
         return view;
     }
 

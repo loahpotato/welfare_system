@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".Activity.HomeFunction.HospitalListActivity"/>
+        <activity android:name=".Activity.AppVersionActivity"></activity>
+        <activity android:name=".Activity.HomeFunction.HospitalListActivity" />
         <activity android:name=".Activity.HomeFunction.HealthCheckActivity" />
         <activity android:name=".Activity.HomeFunction.HealthResultActivity" />
         <activity android:name=".Activity.MainActivity" />
