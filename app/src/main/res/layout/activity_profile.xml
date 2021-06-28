@@ -6,7 +6,8 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".Activity.ProfileActivity"
 android:orientation="vertical"
-android:background="@color/gray">
+android:background="@color/white"
+>
 
     <com.example.welfarehomesmanagementsystem.widget.TitleLayout
         android:layout_width="match_parent"
@@ -31,10 +32,10 @@ android:background="@color/gray">
             />
 
         <TextView
+            android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Liu"
             android:textColor="@color/blue"
             android:layout_marginLeft="20dp"
             android:textSize="20sp"/>
@@ -45,51 +46,49 @@ android:background="@color/gray">
         android:id="@+id/ig_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:isEditable="false"
         app:jt_visible="false"
         app:paddingLeft="15dp"
-        app:edt_content="SWE12345678"
+        app:edt_content=""
         app:title="ID" />
-
-    <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_position"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:jt_visible="false"
-        app:paddingLeft="15dp"
-        app:edt_content="Manager"
-        app:title="Positon" />
 
     <com.example.welfarehomesmanagementsystem.widget.ItemGroup
         android:id="@+id/ig_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_content="Liu"
+        app:isEditable="false"
+        app:jt_visible="false"
         app:paddingLeft="15dp"
         app:title="Name" />
 
     <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_birth"
+        android:id="@+id/ig_position"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_hint_content="Select your birthday"
+        app:isEditable="false"
+        app:jt_visible="false"
         app:paddingLeft="15dp"
-        app:title="Birthday" />
+        app:edt_content=""
+        app:title="Positon" />
 
     <com.example.welfarehomesmanagementsystem.widget.ItemGroup
         android:id="@+id/ig_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_hint_content="Select your gender"
+        app:isEditable="false"
+        app:jt_visible="false"
+        app:edt_content=""
         app:paddingLeft="15dp"
         app:title="Gender" />
 
     <com.example.welfarehomesmanagementsystem.widget.ItemGroup
-        android:id="@+id/ig_address"
+        android:id="@+id/ig_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_hint_content="Edit your address"
+        app:edt_hint_content=" Enter your age"
         app:paddingLeft="15dp"
-        app:title="Address" />
+        app:title="Age" />
+
 
     <com.example.welfarehomesmanagementsystem.widget.ItemGroup
         android:id="@+id/ig_phone"
