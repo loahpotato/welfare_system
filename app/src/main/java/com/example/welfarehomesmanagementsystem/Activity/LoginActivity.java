@@ -18,6 +18,7 @@ import com.example.welfarehomesmanagementsystem.R;
 public class LoginActivity extends AppCompatActivity {
     private EditText user,pass;
     private Button signIn;
+    private Button change;
     private DatabaseHelper DB;
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         user = findViewById(R.id.username1);
         pass = findViewById(R.id.password1);
         signIn = findViewById(R.id.btnSignIn1);
+        change = findViewById(R.id.btnChange);
         DB = new DatabaseHelper(this);
         DB.getReadableDatabase();
         pref=getSharedPreferences("CurrentUserId",MODE_PRIVATE);
@@ -56,6 +58,14 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     editor.apply();
                 }
+            }
+        });
+
+        change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, PasswordModifier.class);
+                startActivity(intent);
             }
         });
 
