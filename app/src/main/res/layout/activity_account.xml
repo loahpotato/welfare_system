@@ -4,37 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Navigation.AccountActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity.Navigation.AccountActivity">
 
     <include layout="@layout/title" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layoutAnimation="@anim/alpha_change">
+
         <FrameLayout
             android:id="@+id/profile_bg"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layoutAnimation="@anim/fragment_down">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
                 android:layout_gravity="fill_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/blue_bg"/>
+                android:src="@drawable/blue_bg" />
         </FrameLayout>
 
         <LinearLayout
             android:id="@+id/profile_outline"
             android:layout_width="350dp"
             android:layout_height="280dp"
+            android:layout_below="@+id/profile_bg"
             android:layout_gravity="center"
-            android:layout_marginTop="-160dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="-160dp"
             android:background="@drawable/home_outline_rectangle"
-            android:orientation="vertical"
-            android:layout_below="@+id/profile_bg">
+            android:orientation="vertical">
 
 
             <LinearLayout
@@ -47,47 +50,51 @@
                 <FrameLayout
                     android:layout_width="110dp"
                     android:layout_height="110dp"
-                    android:background="@drawable/round_line"
                     android:layout_gravity="center"
-                    android:layout_marginStart="15dp">
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/round_line">
 
                     <com.example.welfarehomesmanagementsystem.widget.RoundImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:layout_gravity="center"
                         android:scaleType="centerInside"
-                        android:src="@mipmap/about"
-                        android:layout_gravity="center" />
+                        android:src="@mipmap/about" />
                 </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:orientation="vertical">
+
                     <TextView
+                        android:id="@+id/account_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="Liu"
-                        android:textColor="#424242"
                         android:layout_marginStart="15dp"
-                        android:textSize="30sp"
-                        android:fontFamily="sans-serif-black"/>
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="#424242"
+                        android:textSize="30sp" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_gravity="end"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_gravity="end"
                         android:background="@color/gray" />
+
                     <TextView
+                        android:id="@+id/account_position"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="Manager"
-                        android:textColor="@color/gray"
                         android:layout_marginStart="15dp"
-                        android:textSize="18sp"
-                        android:fontFamily="sans-serif"/>
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -98,10 +105,12 @@
                 android:padding="8dp"
                 app:columnCount="3"
                 app:rowCount="1">
+
                 <LinearLayout
                     style="@style/home_layout_style"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
+
                     <ImageButton
                         android:id="@+id/profile_button"
                         style="@style/home_button_style"
@@ -119,13 +128,13 @@
                     app:layout_rowWeight="1">
 
                     <ImageButton
-                        android:id="@+id/history_button"
+                        android:id="@+id/btnForget"
                         style="@style/home_button_style"
                         android:src="@drawable/ic_twotone_history_edu_24" />
 
                     <TextView
                         style="@style/home_button_text_style"
-                        android:text="History\nAffair" />
+                        android:text="Change\nPassword" />
                 </LinearLayout>
 
                 <LinearLayout

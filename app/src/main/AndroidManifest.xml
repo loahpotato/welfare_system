@@ -17,6 +17,10 @@
         <activity android:name=".Activity.Edit.EditName" />
         <activity android:name=".Entity.FirstaidActivity" />
         <activity android:name=".Activity.HomeFunction.HospitalListActivity" />
+        <activity android:name=".Activity.HomeFunction.ResidentsRegister"></activity>
+        <activity android:name=".Activity.UpdateProfileActivity" />
+        <activity android:name=".Activity.AppVersionActivity" />
+        <activity android:name=".Activity.HomeFunction.HospitalListActivity" />
         <activity android:name=".Activity.HomeFunction.HealthCheckActivity" />
         <activity android:name=".Activity.HomeFunction.HealthResultActivity" />
         <activity android:name=".Activity.MainActivity" />

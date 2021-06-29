@@ -12,6 +12,8 @@ import androidx.annotation.StringRes;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.lang.Integer.parseInt;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DBNAME = "login.db";
     public DatabaseHelper(@Nullable Context context) {
@@ -29,6 +31,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int oldVersion, int newVersion) {
         MyDB.execSQL("DROP TABLE IF EXISTS USERS");
+        onCreate(MyDB);
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase MyDB, int oldVersion, int newVersion) {
+        //Drop table if it's already exist
+        MyDB.execSQL("DROP TABLE IF EXISTS USERS" );
+        //if not exist, we can parse the onCreate method to run
+        onCreate(MyDB);
     }
 
     //Insert data
@@ -46,6 +57,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         else
             return true;
+    }
+
+    public void updateProfile(String uid, String age, String phone){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        if(!age.equals(""))
+            MyDB.execSQL("UPDATE USERS SET age = " + Integer.parseInt(age) + " WHERE userId = " +uid);
+        if(!phone.equals(""))
+            MyDB.execSQL("UPDATE USERS SET phone = " + phone +" WHERE userId = " +uid);
     }
 
     public boolean checkUserId(String userId){
@@ -82,6 +101,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("password",newpass);
         MyDB.update("USERS",contentValues,"userId=?",new String[]{id});
         return true;
+    }
+
+    public Cursor getUserById(String uid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM USERS WHERE userId = ?",  new String[]{uid});
+        return result;
     }
 
 }

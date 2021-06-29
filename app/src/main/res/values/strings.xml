@@ -10,4 +10,6 @@
     <string name="healthcheck">Health Check Appointment</string>
     <string name="hospital_list">Hospital List</string>
     <string name="healthresult">Health Check Results</string>
+    <string name="appversion">App Version</string>
+    <string name="update_profile">Update Profile</string>
 </resources>

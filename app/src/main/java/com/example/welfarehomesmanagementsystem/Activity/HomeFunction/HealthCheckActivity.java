@@ -50,6 +50,7 @@ public class HealthCheckActivity extends AppCompatActivity {
         DB = new DbHelper_HealthCheck(this);
         pref= getSharedPreferences("CurrentUserId",MODE_PRIVATE);
         currentUid= pref.getString("currentUserId","");
+
         chooseDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +71,7 @@ public class HealthCheckActivity extends AppCompatActivity {
 
     };
 
+    // Return the selected hospital in HospitalListActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -79,6 +81,7 @@ public class HealthCheckActivity extends AppCompatActivity {
         }
     }
 
+    //Make an appointment, call Dbhelper to insert data into DB
     public void AddData(){
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,23 +93,29 @@ public class HealthCheckActivity extends AppCompatActivity {
                     Toast.makeText(HealthCheckActivity.this, "Please enter all fields", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    boolean isInserted = DB.insertData(name.getText().toString(),date.getText().toString(),age.getText().toString(),contact.getText().toString(),hospital.getText().toString(), currentUid);
-                    if(isInserted == true)
-                        Toast.makeText(HealthCheckActivity.this,"Make appoint successfully!",Toast.LENGTH_SHORT).show();
+                    if(DB.checkRepeat(name.getText().toString(),date.getText().toString(),hospital.getText().toString())) {
+                        boolean isInserted = DB.insertData(name.getText().toString(), date.getText().toString(), age.getText().toString(), contact.getText().toString(), hospital.getText().toString(), currentUid);
+                        if (isInserted)
+                            Toast.makeText(HealthCheckActivity.this, "Make appoint successfully!", Toast.LENGTH_SHORT).show();
                         else
-                        Toast.makeText(HealthCheckActivity.this,"Fail!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(HealthCheckActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(HealthCheckActivity.this, "Appointment cannot repeat.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
+    // call date widget to select a date for an appointment
     public void showDatePickDlg () {
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog datePickerDialog = new DatePickerDialog(HealthCheckActivity.this, new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                HealthCheckActivity.this.date.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
+                monthOfYear++;//default month is from 0-11, need to add 1 to show the correct one.
+                HealthCheckActivity.this.date.setText(year + "/" + monthOfYear + "/" + dayOfMonth);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
