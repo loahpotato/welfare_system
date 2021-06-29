@@ -31,6 +31,7 @@ android:background="@color/gray">
             />
 
         <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -95,8 +96,9 @@ android:background="@color/gray">
         android:id="@+id/ig_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_hint_content="Edit your phone number"
+        app:edt_hint_content="Edit your Phone"
         app:paddingLeft="15dp"
         app:title="Phone" />
+
 
 </LinearLayout>

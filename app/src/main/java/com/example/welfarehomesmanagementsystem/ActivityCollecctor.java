@@ -27,4 +27,7 @@ public class ActivityCollecctor {
         }
         activities.clear();
     }
+    public static Activity getCurrentActivity(){
+        return activities.size()==0 ? null : activities.get(activities.size()-1);
+    }
 }

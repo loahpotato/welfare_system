@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Edit.EditPhone">
+
+    <com.example.welfarehomesmanagementsystem.widget.EditTitleLayout
+        android:id="@+id/phone_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone:"
+            android:textColor="@color/blue"/>
+        <EditText
+            android:id="@+id/et_edit_phone"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/edit_text"/>
+    </LinearLayout>
+
+
+</LinearLayout>

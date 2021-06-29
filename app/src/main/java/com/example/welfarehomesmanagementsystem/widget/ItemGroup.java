@@ -92,7 +92,7 @@ public class ItemGroup extends FrameLayout{
         contentEdt.setTextColor(contentColor);
         contentEdt.setHint(hintContent);
         contentEdt.setHintTextColor(hintColor);
-//        contentEdt.setFocusable(isEditable); //设置输入框是否可以编辑
+        contentEdt.setFocusable(isEditable); //设置输入框是否可以编辑
 //        contentEdt.setClickable(true);
 //        contentEdt.setKeyListener(null);
         jtRightIv.setVisibility(showJtIcon ? View.VISIBLE : View.GONE);  //设置向右的箭头图标是否可见
