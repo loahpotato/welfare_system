@@ -79,7 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
                 showGender();
             }
         });
-       ig_birth.setOnClickListener(new View.OnClickListener() {
+       ig_birth.getJtRightIv().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showBirth();
