@@ -28,6 +28,7 @@ public class ItemGroup extends FrameLayout{
     public TextView getContentEdt() {
         return contentEdt;
     }
+    public ImageView getJtRightIv() { return jtRightIv;}
 
     public ItemGroup(@NonNull Context context) {
         super(context);
@@ -93,7 +94,7 @@ public class ItemGroup extends FrameLayout{
         contentEdt.setHint(hintContent);
         contentEdt.setHintTextColor(hintColor);
         contentEdt.setFocusable(isEditable); //设置输入框是否可以编辑
-//        contentEdt.setClickable(true);
+        contentEdt.setClickable(true);
 //        contentEdt.setKeyListener(null);
         jtRightIv.setVisibility(showJtIcon ? View.VISIBLE : View.GONE);  //设置向右的箭头图标是否可见
     }

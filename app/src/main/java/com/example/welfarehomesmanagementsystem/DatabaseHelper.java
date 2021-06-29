@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Create table in database
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("CREATE TABLE USERS(userId TEXT primary key, username TEXT, password TEXT, position INT DEFAULT 0, age INT, phone TEXT, gender TEXT)");
+        MyDB.execSQL("CREATE TABLE USERS(userId TEXT primary key, username TEXT, password TEXT, position INT DEFAULT 0, birthday TEXT, phone TEXT, gender TEXT, address TEXT)");
     }
 
     //Drop the table if exists
@@ -66,6 +66,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(!phone.equals(""))
             MyDB.execSQL("UPDATE USERS SET phone = " + phone +" WHERE userId = " +uid);
     }
+
+    public void updateName(String uid, String username){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        MyDB.execSQL("UPDATE USERS SET username = " + username + " WHERE userId = " +uid);
+    }
+
 
     public boolean checkUserId(String userId){
         SQLiteDatabase MyDB = this.getWritableDatabase();

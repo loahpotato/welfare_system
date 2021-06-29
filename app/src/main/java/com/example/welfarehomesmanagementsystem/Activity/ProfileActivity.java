@@ -1,6 +1,7 @@
 package com.example.welfarehomesmanagementsystem.Activity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -22,6 +23,9 @@ import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
 
+import android.content.SharedPreferences;
+import com.example.welfarehomesmanagementsystem.DatabaseHelper;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,11 +42,14 @@ public class ProfileActivity extends AppCompatActivity {
     private ItemGroup ig_gender;
     private ItemGroup ig_birth;
     private TextView user_name;
+    private Cursor result;
     private static final int EDIT_ADDRESS = 1;
     private static final int EDIT_PHONE = 2;
     private static final int EDIT_NAME = 3;
     private OptionsPickerView pvOptions;
     private ArrayList<String> optionsItems_gender = new ArrayList<>();
+    private SharedPreferences pref;
+    private DatabaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +64,16 @@ public class ProfileActivity extends AppCompatActivity {
         ig_address = (ItemGroup)findViewById(R.id.ig_address);
         ig_phone = (ItemGroup)findViewById(R.id.ig_phone);
         user_name = (TextView)findViewById(R.id.user_name);
-        ig_gender.setOnClickListener(new View.OnClickListener() {
+
+        DB = new DatabaseHelper(this);
+        pref= getSharedPreferences("CurrentUserId",MODE_PRIVATE);
+        String uid = pref.getString("currentUserId","");
+        result = DB.getUserById(uid);
+
+        while(result.moveToNext()) {
+            ig_name.getContentEdt().setText(result.getString(1));
+        }
+        ig_gender.getJtRightIv().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showGender();
@@ -69,7 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
                 showBirth();
             }
         });
-       ig_name.setOnClickListener(new View.OnClickListener() {
+       ig_name.getJtRightIv().setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                Intent intent  = new Intent(ProfileActivity.this, EditName.class);
@@ -77,7 +93,7 @@ public class ProfileActivity extends AppCompatActivity {
                startActivityForResult(intent, EDIT_NAME);
            }
        });
-       ig_address.setOnClickListener(new View.OnClickListener() {
+       ig_address.getJtRightIv().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent  = new Intent(ProfileActivity.this, EditAddress.class);
@@ -85,7 +101,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivityForResult(intent, EDIT_ADDRESS);
             }
         });
-        ig_phone.setOnClickListener(new View.OnClickListener() {
+        ig_phone.getJtRightIv().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent  = new Intent(ProfileActivity.this, EditPhone.class);
@@ -93,6 +109,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivityForResult(intent, EDIT_PHONE);
             }
         });
+
     }
 
     private void initOptionData() {
@@ -158,4 +175,5 @@ public class ProfileActivity extends AppCompatActivity {
                 break;
         }
     }
+
 }
