@@ -14,12 +14,14 @@ import android.widget.ImageView;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.CovidTips;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthCheckActivity;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthResultActivity;
+import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.ResidentsRegister;
 import com.example.welfarehomesmanagementsystem.R;
 
 
 public class HomeActivity extends Fragment{
     private ImageView covid;
     private ImageButton health;
+    private ImageButton resident;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,6 +41,15 @@ public class HomeActivity extends Fragment{
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), HealthResultActivity.class);
+                startActivity(i);
+            }
+        });
+
+        resident=(ImageButton) view.findViewById(R.id.home_out_record);
+        resident.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), ResidentsRegister.class);
                 startActivity(i);
             }
         });
