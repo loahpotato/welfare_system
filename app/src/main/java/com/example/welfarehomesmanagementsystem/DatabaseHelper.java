@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
+import org.w3c.dom.Text;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -67,10 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             MyDB.execSQL("UPDATE USERS SET phone = " + phone +" WHERE userId = " +uid);
     }
 
-    public void updateName(String uid, String username){
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        MyDB.execSQL("UPDATE USERS SET username = " + username + " WHERE userId = " +uid);
-    }
+
 
 
     public boolean checkUserId(String userId){
@@ -99,6 +98,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Matcher matcher= pattern.matcher(string);
         boolean isMatch=matcher.matches();
         return isMatch;
+    }
+
+    public boolean updateName(String uid, String username){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username",username);
+        MyDB.update("USERS",contentValues,"userId=?",new String[]{uid});
+        return true;
+    }
+
+    public boolean updateAddress(String uid, String address){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("address",address);
+        MyDB.update("USERS",contentValues,"userId=?",new String[]{uid});
+        return true;
+    }
+
+    public boolean updatePhone(String uid, String phone){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("phone",phone);
+        MyDB.update("USERS",contentValues,"userId=?",new String[]{uid});
+        return true;
+    }
+
+    public void updateBirth(String uid, String birth){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("birthday",birth);
+        MyDB.update("USERS",contentValues,"userId=?",new String[]{uid});
+    }
+
+    public void updateGender(String uid, String gender){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("gender",gender);
+        MyDB.update("USERS",contentValues,"userId=?",new String[]{uid});
     }
 
     public boolean update(String id, String newpass) {

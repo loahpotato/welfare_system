@@ -37,11 +37,13 @@ import java.util.List;
 public class ProfileActivity extends AppCompatActivity {
 
     private ItemGroup ig_name;
+    private ItemGroup ig_positon;
     private ItemGroup ig_address;
     private ItemGroup ig_phone;
     private ItemGroup ig_gender;
     private ItemGroup ig_birth;
     private TextView user_name;
+    private ItemGroup ig_id;
     private Cursor result;
     private static final int EDIT_ADDRESS = 1;
     private static final int EDIT_PHONE = 2;
@@ -50,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ArrayList<String> optionsItems_gender = new ArrayList<>();
     private SharedPreferences pref;
     private DatabaseHelper DB;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +66,17 @@ public class ProfileActivity extends AppCompatActivity {
         ig_name = (ItemGroup)findViewById(R.id.ig_name);
         ig_address = (ItemGroup)findViewById(R.id.ig_address);
         ig_phone = (ItemGroup)findViewById(R.id.ig_phone);
+        ig_id = (ItemGroup)findViewById(R.id.ig_id);
+        ig_positon = (ItemGroup)findViewById(R.id.ig_position);
         user_name = (TextView)findViewById(R.id.user_name);
 
         DB = new DatabaseHelper(this);
         pref= getSharedPreferences("CurrentUserId",MODE_PRIVATE);
-        String uid = pref.getString("currentUserId","");
+        uid = pref.getString("currentUserId","");
         result = DB.getUserById(uid);
 
-        while(result.moveToNext()) {
-            ig_name.getContentEdt().setText(result.getString(1));
-        }
+        initInfo();
+
         ig_gender.getJtRightIv().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +127,7 @@ public class ProfileActivity extends AppCompatActivity {
                 public void onOptionsSelect(int options1, int option2, int options3, View v) {
                     String tx = optionsItems_gender.get(options1);
                     ig_gender.getContentEdt().setText(tx);
+                    DB.updateGender(uid,tx);
                 }
             })
                     .setSubmitText("Confirm")
@@ -142,6 +147,7 @@ public class ProfileActivity extends AppCompatActivity {
                //选择了则显示并暂存LoginUser，退出时在保存至数据库
                SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
                ig_birth.getContentEdt().setText(sdf.format(date));
+               DB.updateBirth(uid,sdf.format(date));
            }
        })      .setDate(selectedDate)
                .setSubmitText("Confirm")
@@ -157,8 +163,9 @@ public class ProfileActivity extends AppCompatActivity {
         switch (requestCode){
             case EDIT_NAME:
                 if(resultCode == RESULT_OK){
-                    ig_name.getContentEdt().setText(data.getStringExtra("text"));
-                    user_name.setText(data.getStringExtra("text"));
+
+                   ig_name.getContentEdt().setText(data.getStringExtra("text"));
+                   user_name.setText(data.getStringExtra("text"));
                 }
                 break;
             case EDIT_ADDRESS:
@@ -173,6 +180,32 @@ public class ProfileActivity extends AppCompatActivity {
                 break;
             default:
                 break;
+        }
+    }
+
+    private void initInfo(){
+        while(result.moveToNext()) {
+            user_name.setText(result.getString(1));
+            ig_id.getContentEdt().setText(result.getString(0));
+            ig_name.getContentEdt().setText(result.getString(1));
+            if(result.getInt(3) == 0){
+                ig_positon.getContentEdt().setText("Staff");
+            }else if (result.getInt(3) == 1){
+                ig_positon.getContentEdt().setText("Manager");
+            }
+            if(!result.isNull(6)){
+                ig_gender.getContentEdt().setText(result.getString(6));
+            }
+            if(!result.isNull(4)){
+                ig_birth.getContentEdt().setText(result.getString(4));
+            }
+            if(!result.isNull(7)){
+                ig_address.getContentEdt().setText(result.getString(7));
+            }
+            if(!result.isNull(5)){
+                ig_phone.getContentEdt().setText(result.getString(5));
+            }
+
         }
     }
 

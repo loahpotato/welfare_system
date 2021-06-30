@@ -15,7 +15,7 @@
         <activity android:name=".Activity.Edit.EditPhone"></activity>
         <activity android:name=".Activity.Edit.EditAddress" />
         <activity android:name=".Activity.Edit.EditName" />
-        <activity android:name=".Entity.FirstaidActivity" />
+        <activity android:name=".Activity.HomeFunction.FirstaidActivity" />
         <activity android:name=".Activity.HomeFunction.HospitalListActivity" />
         <activity android:name=".Activity.HomeFunction.ResidentsRegister"></activity>
         <activity android:name=".Activity.UpdateProfileActivity" />

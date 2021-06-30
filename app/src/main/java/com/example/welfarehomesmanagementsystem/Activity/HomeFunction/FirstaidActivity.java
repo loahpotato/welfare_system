@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem.Entity;
+package com.example.welfarehomesmanagementsystem.Activity.HomeFunction;
 
 import androidx.appcompat.app.AppCompatActivity;
 

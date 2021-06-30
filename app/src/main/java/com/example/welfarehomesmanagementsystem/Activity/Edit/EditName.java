@@ -11,10 +11,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import android.content.SharedPreferences;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.welfarehomesmanagementsystem.DatabaseHelper;
 
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
@@ -27,6 +31,8 @@ public class EditName extends AppCompatActivity {
     private EditText edit_name;
     private SharedPreferences pref;
     private DatabaseHelper DB;
+    private Button btn;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +42,21 @@ public class EditName extends AppCompatActivity {
 
         tl_title = (EditTitleLayout) findViewById(R.id.tl_title);
         edit_name = (EditText) findViewById(R.id.et_edit_name);
+        btn = (Button) findViewById(R.id.edit_name_btn);
         DB = new DatabaseHelper(this);
         pref= getSharedPreferences("CurrentUserId",MODE_PRIVATE);
-        String uid = pref.getString("currentUserId","");
+        uid = pref.getString("currentUserId","");
+
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(DB.updateName(uid,edit_name.getText().toString())){
+                    Toast.makeText(EditName.this,"Name Edited Successfully",Toast.LENGTH_LONG).show();
+                };
+            }
+        });
 
         //设置监听器
         //如果点击完成，则更新loginUser并销毁

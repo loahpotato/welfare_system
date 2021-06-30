@@ -22,14 +22,26 @@
                 android:layout_height="wrap_content"
                 android:text="Name:"
                 android:textColor="@color/blue"/>
+
             <EditText
                 android:id="@+id/et_edit_name"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_width="250dp"
                 android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/edit_text"
                 android:focusableInTouchMode="true"
-                android:background="@drawable/edit_text"/>
+                android:hint="new name"
+                android:paddingLeft="5dp"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/edit_name_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:text="Edit" />
         </LinearLayout>
+
 
 
 </LinearLayout>
