@@ -46,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         DB = new com.example.welfarehomesmanagementsystem.DatabaseHelper(this);
 
         radioGroup1=findViewById(R.id.radioGroup_sign_up);
+        radioGroup1.clearCheck();
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -59,6 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         radioGroup2=findViewById(R.id.radioGroup_gender);
+        radioGroup2.clearCheck();
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
