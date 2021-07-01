@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.HomeFunction.FirstAidResult">
+
+    <com.example.welfarehomesmanagementsystem.widget.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="65dp"
+            android:src="@mipmap/hospital5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Hospital information"
+            android:textColor="@color/text_blue"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/company" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="Hospital:"
+            android:textColor="@color/teal_700"/>
+
+        <TextView
+            android:id="@+id/firstAid_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="123"
+            android:textColor="@color/teal_700"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/address" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="Address:"
+            android:textColor="@color/teal_700"/>
+
+        <TextView
+            android:id="@+id/hospital_address"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="123"
+            android:textColor="@color/teal_700"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/phonecall" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="Tel:"
+            android:textColor="@color/teal_700"/>
+
+        <TextView
+            android:id="@+id/hospital_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="123"
+            android:textColor="@color/teal_700"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/ic_ambulance"
+            android:background="@color/blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="Arrive Time:"
+            android:textColor="@color/teal_700"/>
+
+        <TextView
+            android:id="@+id/hospital_arrTime"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="123"
+            android:textColor="@color/teal_700"/>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

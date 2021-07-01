@@ -4,7 +4,161 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.HomeFunction.FirstaidActivity">
+
+    <com.example.welfarehomesmanagementsystem.widget.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_firstAid"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+       >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@color/red"
+            app:srcCompat="@drawable/ic_baseline_local_hospital_24" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="First Aid Search"
+            android:textColor="@color/red"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            app:srcCompat="@mipmap/address" />
+
+
+        <TextView
+            android:id="@+id/firstAid_address"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text"
+            android:hint="Select your address" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_donation"
+            android:background="@color/blue"/>
+
+        <TextView
+            android:id="@+id/firstAid_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text"
+            android:hint="Select the symptom" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+
+        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_account_circle_24"
+           />
+
+        <TextView
+            android:id="@+id/firstAid_people"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text"
+            android:hint="Select people number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+
+        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_old"
+            android:background="@color/blue"/>
+
+        <EditText
+            android:id="@+id/firstAid_age"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="10dp"
+            android:ems="10"
+            android:hint="Enter patient's age"
+            android:inputType="number"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/firstAid_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:text="Search" />
 
 
 </LinearLayout>
