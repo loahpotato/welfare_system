@@ -7,12 +7,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.ProcurementActivity;
 import com.example.welfarehomesmanagementsystem.R;
 import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
@@ -90,7 +92,6 @@ public class SignUpActivity extends AppCompatActivity {
                         boolean checkUser;
                         checkUser = DB.checkUserId(user);
                         if(!checkUser){
-
                             boolean regulation = DB.isContainAll(pass);
                             if(regulation){
                                 boolean insert = DB.insertData(user,name,pass,position,gender);
@@ -104,10 +105,12 @@ public class SignUpActivity extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int which) {
                                             userId.setText("");
                                             username.setText("");
-                                            staff.setChecked(true);
-                                            man.setChecked(true);
+                                            radioGroup1.clearCheck();
+                                            radioGroup2.clearCheck();
                                             password.setText("");
                                             rePassword.setText("");
+                                            InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                            mInputMethodManager.hideSoftInputFromWindow(SignUpActivity.this.getCurrentFocus().getWindowToken(), 0);
                                         }
                                     });
                                     dialog.show();
@@ -120,8 +123,8 @@ public class SignUpActivity extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int which) {
                                             userId.setText("");
                                             username.setText("");
-                                            staff.setChecked(true);
-                                            man.setChecked(true);
+                                            radioGroup1.clearCheck();
+                                            radioGroup2.clearCheck();
                                             password.setText("");
                                             rePassword.setText("");
                                         }
@@ -161,8 +164,8 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         userId.setText("");
                         username.setText("");
-                        staff.setChecked(true);
-                        man.setChecked(true);
+                        radioGroup1.clearCheck();
+                        radioGroup2.clearCheck();
                         password.setText("");
                         rePassword.setText("");
                     }

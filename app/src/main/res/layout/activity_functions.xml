@@ -51,7 +51,7 @@
             android:layout_width="350dp"
             android:layout_height="170dp"
             android:layout_gravity="center"
-            android:layout_marginTop="-40dp"
+            android:layout_marginTop="-50dp"
             android:layout_marginStart="30dp"
             android:background="@drawable/home_outline_rectangle"
             android:orientation="vertical"
@@ -104,18 +104,20 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/procure_2"
             android:layout_width="350dp"
             android:layout_height="170dp"
+            android:layout_below="@+id/procure_1"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/home_outline_rectangle"
-            android:orientation="vertical"
-            android:layout_below="@+id/procure_1">
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/function_procure_button"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -125,37 +127,40 @@
                 <FrameLayout
                     android:layout_width="110dp"
                     android:layout_height="110dp"
-                    android:background="@drawable/round_line"
                     android:layout_gravity="center"
-                    android:layout_marginStart="15dp">
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/round_line">
 
                     <com.example.welfarehomesmanagementsystem.widget.RoundImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:scaleType="centerCrop"
                         android:layout_gravity="center"
-                        android:src="@mipmap/pro"/>
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/pro" />
                 </FrameLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="sans-serif"
                         android:text="Procurement application"
                         android:textColor="#424242"
-                        android:layout_marginStart="15dp"
-                        android:textSize="25sp"
-                        android:fontFamily="sans-serif"/>
+                        android:textSize="25sp" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_gravity="end"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="15dp"
-                        android:layout_gravity="end"
                         android:background="@color/gray" />
                 </LinearLayout>
             </LinearLayout>

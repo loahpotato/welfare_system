@@ -1,8 +1,10 @@
 package com.example.welfarehomesmanagementsystem.Activity.HomeFunction;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ public class HealthResultActivity extends AppCompatActivity {
     private DbHelper_HealthCheck DB;
     private SharedPreferences pref;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +49,17 @@ public class HealthResultActivity extends AppCompatActivity {
         }
         LinearLayout health = (LinearLayout) findViewById(R.id.layout_health_result);
 
-        for (HealthCheck h : healthList) {
+        if(healthList.isEmpty()){
+            TextView note = findViewById(R.id.health_chek_note);
+            note.setVisibility(View.VISIBLE);
+            note.setText("No health check report.");
+        }
+        else{
+            for (HealthCheck h : healthList) {
             ItemList showResult=new ItemList(this,null);
             showResult.setName(h.getName());
             health.addView(showResult);
+            }
         }
 
 

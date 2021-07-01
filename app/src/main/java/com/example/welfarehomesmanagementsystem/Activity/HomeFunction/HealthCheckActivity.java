@@ -87,14 +87,18 @@ public class HealthCheckActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name1,age1,contact1,hospital1,date1;
-                name1=name.getText().toString(); age1=age.getText().toString();contact1=contact.getText().toString();hospital1=hospital.getText().toString();date1=date.getText().toString();
+                name1=name.getText().toString();
+                age1=age.getText().toString();
+                contact1=contact.getText().toString();
+                hospital1=hospital.getText().toString();
+                date1=date.getText().toString();
 
                 if (name1.equals("")||age1.equals("")||contact1.equals("")||hospital1.equals("")||date1.equals("")) {
                     Toast.makeText(HealthCheckActivity.this, "Please enter all fields", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    if(DB.checkRepeat(name.getText().toString(),date.getText().toString(),hospital.getText().toString())) {
-                        boolean isInserted = DB.insertData(name.getText().toString(), date.getText().toString(), age.getText().toString(), contact.getText().toString(), hospital.getText().toString(), currentUid);
+                    if(DB.checkRepeat(name1,date1,hospital1)) {
+                        boolean isInserted = DB.insertData(name1, date1, age1, contact1, hospital1, currentUid);
                         if (isInserted)
                             Toast.makeText(HealthCheckActivity.this, "Make appoint successfully!", Toast.LENGTH_SHORT).show();
                         else

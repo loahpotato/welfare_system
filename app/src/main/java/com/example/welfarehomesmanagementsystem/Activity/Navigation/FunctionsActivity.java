@@ -12,10 +12,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthCheckActivity;
+import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.ProcurementActivity;
 import com.example.welfarehomesmanagementsystem.R;
 
 public class FunctionsActivity extends Fragment {
-    private LinearLayout healthcheck;
+    private LinearLayout healthcheck, procure;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -26,6 +27,15 @@ public class FunctionsActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), HealthCheckActivity.class);
+                startActivity(i);
+            }
+        });
+
+        procure=(LinearLayout) view.findViewById(R.id.function_procure_button);
+        procure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), ProcurementActivity.class);
                 startActivity(i);
             }
         });

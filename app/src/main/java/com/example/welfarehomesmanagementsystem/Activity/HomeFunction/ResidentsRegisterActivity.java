@@ -82,20 +82,20 @@ public class ResidentsRegisterActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name2,date2,age2,relative2, contact2, note2;
-                name2=name.getText().toString();
-                date2=date.getText().toString();
-                age2=age.getText().toString();
-                relative2=relative.getText().toString();
-                contact2=contact.getText().toString();
-                note2=note.getText().toString();
+                String _name,_date,_age,_relative, _contact, _note;
+                _name=name.getText().toString();
+                _date=date.getText().toString();
+                _age=age.getText().toString();
+                _relative=relative.getText().toString();
+                _contact=contact.getText().toString();
+                _note=note.getText().toString();
 
-                if (name2.equals("")||date2.equals("")||age2.equals("")||relative2.equals("")||contact2.equals("")||note2.equals("")) {
-                    Toast.makeText(ResidentsRegisterActivity.this, "Please enter all fields", Toast.LENGTH_LONG).show();
+                if (_name.equals("")||_date.equals("")||_age.equals("")||_relative.equals("")||_contact.equals("")) {
+                    Toast.makeText(ResidentsRegisterActivity.this, "Please enter necessary fields", Toast.LENGTH_LONG).show();
                 }
                 else {
                     if(DB.checkRepeat(name.getText().toString(),age.getText().toString(),contact.getText().toString())) {
-                        boolean isInserted = DB.insertData(name.getText().toString(), date.getText().toString(), gender, age.getText().toString(),relative.getText().toString(), contact.getText().toString(), note.getText().toString(), currentUid);
+                        boolean isInserted = DB.insertData(_name, _date, gender, _age,_relative, _contact, _note, currentUid);
                         if (isInserted)
                             Toast.makeText(ResidentsRegisterActivity.this, "Residents Register successfully!", Toast.LENGTH_SHORT).show();
                         else

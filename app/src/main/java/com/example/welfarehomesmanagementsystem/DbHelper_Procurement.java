@@ -8,23 +8,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DbHelper_HealthCheck extends SQLiteOpenHelper {
+public class DbHelper_Procurement extends SQLiteOpenHelper {
     //Declare variable name for database, table and column
-    public static final String DATABASE_NAME = "HealthCheckAppointment.db";
-    public static final String TABLE_NAME = "HealthCheckAppointment_table";
-    public static final String COLUMN_1 = "NAME";
-    public static final String COLUMN_2 = "DATE";
-    public static final String COLUMN_3 = "AGE";
-    public static final String COLUMN_4 = "CONTACT";
-    public static final String COLUMN_5 = "HOSPITAL";
-    public static final String COLUMN_6 = "STAFF";
-    public DbHelper_HealthCheck(@Nullable Context context) {
+    public static final String DATABASE_NAME = "Procure.db";
+    public static final String TABLE_NAME = "PROCUREMENT";
+    public static final String COLUMN_1 = "Item";
+    public static final String COLUMN_2 = "Amount";
+    public static final String COLUMN_3 = "Price";
+    public static final String COLUMN_4 = "Staff";
+    public static final String COLUMN_5 = "Manager";
+    public static final String COLUMN_6 = "Date";
+    public static final String COLUMN_7 = "Others";
+    public DbHelper_Procurement(@Nullable Context context) {
         super(context,DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME+"(NAME TEXT, DATE TEXT, AGE TEXT,CONTACT TEXT,HOSPITAL TEXT, STAFF TEXT)");
+        db.execSQL("create table "+TABLE_NAME+"(Item TEXT, Amount INT, Price TEXT,Staff TEXT,Manager TEXT, Date TEXT, Others TEXT)");
     }
 
     @Override
@@ -42,15 +43,16 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         //if not exist, we can parse the onCreate method to run
         onCreate(db);
     }
-    public boolean insertData(String name,String date, String age,String contact, String hospital, String staff){
+    public boolean insertData(String item,int amount, String price,String staff, String manager, String date, String others){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_1,name);
-        contentValues.put(COLUMN_2,date);
-        contentValues.put(COLUMN_3,age);
-        contentValues.put(COLUMN_4,contact);
-        contentValues.put(COLUMN_5,hospital);
-        contentValues.put(COLUMN_6,staff);
+        contentValues.put(COLUMN_1,item);
+        contentValues.put(COLUMN_2,amount);
+        contentValues.put(COLUMN_3,price);
+        contentValues.put(COLUMN_4,staff);
+        contentValues.put(COLUMN_5,manager);
+        contentValues.put(COLUMN_6,date);
+        contentValues.put(COLUMN_7,others);
         long result = db.insert(TABLE_NAME,null,contentValues);
         if(result ==-1)
             return false;
@@ -61,16 +63,6 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE STAFF = ?",  new String[]{userId});
         return result;
-    }
-
-    public boolean checkRepeat(String name, String date, String hospital){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE NAME = ?",  new String[]{name});
-        while(result.moveToNext()){
-            if(result.getString(1).equals(date) && result.getString(4).equals(hospital))
-                return false;
-        }
-        return true;
     }
 
     public Cursor getByRowId(String rid){

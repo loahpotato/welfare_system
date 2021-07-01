@@ -17,10 +17,7 @@ public class CovidTips extends AppCompatActivity {
         setContentView(R.layout.covid_tip);
         TitleLayout t=findViewById(R.id.title_covid);
         t.setT(R.string.covidTips);
-        //隐藏默认标题栏
-        ActionBar actionbar = getSupportActionBar();
-        if(actionbar!=null)
-            actionbar.hide();
+
 
 
 

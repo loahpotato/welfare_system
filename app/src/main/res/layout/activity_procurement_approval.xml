@@ -1,10 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <com.example.welfarehomesmanagementsystem.widget.TitleLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/title_procurement_approval"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    android:textSize="20dp"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/wheelchair"
+                        android:layout_width="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_height="wrap_content"
+                        android:text="Wheelchair"/>
+                    <RadioButton
+                        android:id="@+id/oxygenerator"
+                        android:layout_width="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_height="wrap_content"
+                        android:text="Oxygenerator"/>
+                    <RadioButton
+                        android:id="@+id/face_mask"
+                        android:layout_width="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_height="wrap_content"
+                        android:text="Face mask"/>
+                </RadioGroup>
+                <RadioGroup
+                    android:id="@+id/rg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/crutch"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Crutch"/>
+                    <RadioButton
+                        android:id="@+id/nebulizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Breathing nebulizer"/>
+                </RadioGroup>
+            </RadioGroup>
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/procure_amount"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Please enter the amount "
+                    android:textSize="20sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/procure_date"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Please choose a date "
+                    android:textSize="20sp"
+                    android:editable="false"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    android:id="@+id/procure_choose_date"
+                    android:layout_marginStart="30dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unit price"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/procure_price"
+                android:layout_marginStart="15dp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:hint="Please enter the price"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Receiver (Manager ID)"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/procure_manager"
+                android:layout_marginStart="15dp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:hint="Please enter the receiver's ID"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:visibility="invisible"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other note"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/procure_note"
+                android:layout_marginStart="15dp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:hint="Any other important note"
+                android:textSize="20sp"/>
+
+
+            <Button
+                android:id="@+id/procurement_submit"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textSize="20sp"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
