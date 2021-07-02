@@ -10,6 +10,7 @@ public class Approval {
     public String staff;
     public String others;
     public String status;
+    public int rid;
 
     public Approval(String item, String date, int amount, String price, String manager, String staff, String others, String status) {
         this.item = item;
@@ -20,6 +21,14 @@ public class Approval {
         this.staff = staff;
         this.others = others;
         this.status = status;
+    }
+
+    public int getRid() {
+        return rid;
+    }
+
+    public void setRid(int rid) {
+        this.rid = rid;
     }
 
     public String getOthers() {

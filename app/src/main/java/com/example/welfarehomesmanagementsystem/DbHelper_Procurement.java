@@ -67,9 +67,23 @@ public class DbHelper_Procurement extends SQLiteOpenHelper {
         return result;
     }
 
-    public Cursor getByRowId(String rid){
+    public Cursor getDataByManager(String userId){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE rowid = ? ",new String[]{rid});
+        Cursor result = db.rawQuery("SELECT rowid, *  FROM "  + TABLE_NAME + " WHERE Manager = ?",  new String[]{userId});
+        return result;
+    }
+
+    public boolean updateStatus(int rid, String status) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Status",status);
+        MyDB.update(TABLE_NAME,contentValues,"rowid = " + rid,null);
+        return true;
+    }
+
+    public Cursor getByRowId(int rid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE rowid = " + rid,null);
         return result;
     }
 

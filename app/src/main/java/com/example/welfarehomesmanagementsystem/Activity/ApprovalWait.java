@@ -69,10 +69,9 @@ public class ApprovalWait extends Fragment {
         else{
             for (Approval w : waitList) {
                 ItemList showResult=new ItemList(getActivity(),null);
-                showResult.setTitleContent(w.getItem());
                 showResult.setInfoContent1(w.getDate());
                 showResult.setInfoContent2(w.getManager());
-                showResult.setTitle("Item: ");
+                showResult.setTitle(w.getItem());
                 showResult.setInfo2("To manager: ");
                 showResult.setLine(6,0xFF46A3FF);
                 showResult.setTitleColor(0xFF46A3FF);

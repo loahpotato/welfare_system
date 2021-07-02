@@ -1,11 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.welfarehomesmanagementsystem.widget.TitleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title_covid"/>
+    <ScrollView
+        android:layout_below="@+id/title_covid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_below="@+id/title_covid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:justificationMode="inter_word"
+                android:text="Avoid gatherings"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="22sp"/>
 
-</LinearLayout>
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray" />
+            <TextView
+                style="@style/policy_text"
+                android:text="Limits should be put on the number of people allowed into public facilities such as cinema and tourist spots; keep a distance of at least one meter at gatherings."
+                />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:justificationMode="inter_word"
+                android:text="Personal hygiene"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="22sp"/>
+
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray" />
+
+            <TextView
+                style="@style/policy_text"
+                android:text="Keep rooms clean; open windows often to keep the house ventilated.\nWash hands with running water and soap after returning from public facilities, before eating, and after using the restroom.\nDo not touch eyes with dirty hands." />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:justificationMode="inter_word"
+                android:text="Face mask"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="22sp"/>
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray" />
+            <TextView
+                style="@style/policy_text"
+                android:text="Wear a mask at crowded public spaces.\nCover nose and mouth when sneezing and coughing." />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:justificationMode="inter_word"
+                android:text="Stay vigilant"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="22sp"/>
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray" />
+            <TextView
+                style="@style/policy_text"
+                android:layout_marginBottom="20dp"
+                android:text="When you show symptoms such as a runny nose, fever or coughing, go to hospital for treatment promptly. And do not take medicines without consulting a doctor."/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

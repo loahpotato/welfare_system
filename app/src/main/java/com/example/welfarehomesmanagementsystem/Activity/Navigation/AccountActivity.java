@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.welfarehomesmanagementsystem.Activity.LoginActivity;
 import com.example.welfarehomesmanagementsystem.Activity.PasswordModifier;
@@ -76,8 +77,13 @@ public class AccountActivity extends Fragment {
         addAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), SignUpActivity.class);
-                startActivity(i);
+                if(u.getPosition()==1){
+                    Intent i = new Intent(getContext(), SignUpActivity.class);
+                    startActivity(i);
+                }
+                else{
+                    Toast.makeText(getActivity(),"You are not a manager.",Toast.LENGTH_LONG).show();
+                }
             }
         });
         logout=(Button)view.findViewById(R.id.Log_out_button);

@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp">
+            >
             <TextView
                 android:id="@+id/list_info2_content"
                 android:layout_width="wrap_content"
@@ -77,6 +77,29 @@
                 android:layout_marginStart="5dp"
                 android:textSize="20sp"
                 android:textFontWeight="500"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/list_note_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="-105dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/list_note_bg"
+            android:padding="5dp"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/list_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-black"
+                android:textFontWeight="1000"
+                android:text="Not Allowed"
                 />
         </LinearLayout>
     </LinearLayout>

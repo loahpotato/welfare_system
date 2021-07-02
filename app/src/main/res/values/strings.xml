@@ -15,4 +15,6 @@
     <string name="procure">Procument Approval</string>
     <string name="help">Help</string>
     <string name="approalStatus">Procument Approval Status</string>
+    <string name="view_approval">View Approval</string>
+    <string name="approve">Approve</string>
 </resources>

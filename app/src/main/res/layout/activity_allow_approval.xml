@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AllowApprovalActivity"
+    android:orientation="vertical">
+
+    <com.example.welfarehomesmanagementsystem.widget.TitleLayout
+        android:id="@+id/title_approve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/approve_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_outline_rectangle"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/approve_submit"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Approve"
+        android:textSize="20dp"
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/not_approve_submit"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not APPROVE"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        app:backgroundTint="@color/light_red" />
+
+</LinearLayout>

@@ -133,13 +133,13 @@
                             app:layout_rowWeight="1">
 
                             <ImageButton
-                                android:id="@+id/home_visit_record"
+                                android:id="@+id/home_procurement"
                                 style="@style/home_button_style"
                                 android:src="@mipmap/ic_door" />
 
                             <TextView
                                 style="@style/home_button_text_style"
-                                android:text="Visitation\nRecords" />
+                                android:text="Approve\nProcurement" />
                         </LinearLayout>
 
                         <LinearLayout

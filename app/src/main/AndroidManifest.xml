@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".Activity.ApprovalFinish"></activity>
+        <activity android:name=".widget.ItemDetail"></activity>
+        <activity android:name=".Activity.AllowApprovalActivity" />
+        <activity android:name=".Activity.HomeFunction.ViewApprovalActivity" />
+        <activity android:name=".Activity.ApprovalFinish" />
         <activity android:name=".Activity.ApprovalWait" />
         <activity android:name=".Activity.HomeFunction.FirstAidResult" />
         <activity android:name=".Activity.HomeFunction.FirstaidActivity" />

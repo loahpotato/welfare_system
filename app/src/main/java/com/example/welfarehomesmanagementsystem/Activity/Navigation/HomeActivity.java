@@ -17,11 +17,12 @@ import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.FirstaidAc
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthResultActivity;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.ResidentsRegisterActivity;
 import com.example.welfarehomesmanagementsystem.R;
+import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.ViewApprovalActivity;
 
 
 public class HomeActivity extends Fragment{
     private ImageView covid;
-    private ImageButton health, approval;
+    private ImageButton health, approval, procure;
     private ImageButton resident;
     private ImageButton firstAid;
     @Nullable
@@ -70,6 +71,15 @@ public class HomeActivity extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), ApprovalStatusActivity.class);
+                startActivity(i);
+            }
+        });
+
+        procure = (ImageButton) view.findViewById(R.id.home_procurement);
+        procure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), ViewApprovalActivity.class);
                 startActivity(i);
             }
         });

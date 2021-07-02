@@ -67,18 +67,19 @@ public class ApprovalFinish extends Fragment {
         else{
             for (Approval w : finishList) {
                 ItemList showResult=new ItemList(getActivity(),null);
-                showResult.setTitleContent(w.getItem());
                 showResult.setInfoContent1(w.getDate());
                 showResult.setInfoContent2(w.getManager());
-                showResult.setTitle("Item: ");
+                showResult.setTitle(w.getItem());
                 showResult.setInfo2("To manager: ");
-                if(w.getStatus().equals("Not Allowed")) {
+                if(w.getStatus().equals("Not Approved")) {
                     showResult.setLine(6,0xFFDA3434);
                     showResult.setTitleColor(0xFFDA3434);
+                    showResult.setNote("Not Approved");
                 }
                 else{
                     showResult.setLine(6,0xFF63E1C3);
                     showResult.setTitleColor(0xFF63E1C3);
+                    showResult.setNote("Approved");
                 }
                 finish.addView(showResult);
             }
