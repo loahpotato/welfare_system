@@ -16,28 +16,44 @@ import androidx.annotation.StringRes;
 import com.example.welfarehomesmanagementsystem.R;
 
 public class ItemList extends LinearLayout {
-    protected TextView name,date,hospital;
+    protected TextView title,name,infoContent1,infoContent2,info1, info2;
     protected LinearLayout round;
     public ItemList(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.item_list,this);
 
-        name = (TextView) findViewById(R.id.health_result_name);
-        date = (TextView) findViewById(R.id.health_result_date);
-        hospital = (TextView) findViewById(R.id.health_result_hospital);
+        title=findViewById(R.id.list_title);
+        name = (TextView) findViewById(R.id.list_title_content);
+        info1 = findViewById(R.id.list_info1);
+        infoContent1=(TextView) findViewById(R.id.list_info1_content);
+        info2 = (TextView) findViewById(R.id.list_info2);
+        infoContent2=(TextView) findViewById(R.id.list_info2_content);
         round = findViewById(R.id.roundLine);
         }
     public void setLine(int width,int color){
         GradientDrawable myGrad = (GradientDrawable)round.getBackground();
         myGrad.setStroke(width,color);
     }
-    public void setName(String t) {
+    public void setTitle(String t) {
+        this.title.setText(t);
+    }
+    public void setTitleContent(String t) {
         this.name.setText(t);
     }
-    public void setDate(String t) {
-        this.date.setText(t);
+    public void setTitleColor(int c) {
+        this.name.setTextColor(c);
+        this.title.setTextColor(c);
     }
-    public void setHospital(String t) {
-        this.hospital.setText(t);
+    public void setInfo1(String t) {
+        this.infoContent1.setText(t);
+    }
+    public void setInfo2(String t) {
+        this.infoContent2.setText(t);
+    }
+    public void setInfoContent1(String t) {
+        this.info1.setText(t);
+    }
+    public void setInfoContent2(String t) {
+        this.info2.setText(t);
     }
 }

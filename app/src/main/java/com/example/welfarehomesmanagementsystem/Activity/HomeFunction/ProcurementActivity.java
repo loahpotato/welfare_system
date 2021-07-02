@@ -123,9 +123,11 @@ public class ProcurementActivity extends AppCompatActivity {
                 String _manager=manager.getText().toString();
                 String _note=note.getText().toString();
                 Cursor managerCheck = DB_check.getUserById(_manager);
-                String manager_check = "";
+                String manager_check_id = "";
+                int manager_check = 0;
                 while(managerCheck.moveToNext()){
-                    manager_check = managerCheck.getString(0);
+                    manager_check_id = managerCheck.getString(0);
+                    manager_check = managerCheck.getInt(3);
                 }
                 AlertDialog.Builder dialog = new AlertDialog.Builder(ProcurementActivity.this);
                 dialog.setTitle("Approval Submission");
@@ -133,7 +135,7 @@ public class ProcurementActivity extends AppCompatActivity {
                 if (item.equals("")||_amount.equals("")||_price.equals("")||_manager.equals("")||_date.equals("")) {
                     Toast.makeText(ProcurementActivity.this, "Please enter necessary fields", Toast.LENGTH_LONG).show();
                 }
-                else if(manager_check.equals("") ){
+                else if(manager_check_id.equals("") || manager_check==0){
                     Toast.makeText(ProcurementActivity.this, "Manager ID does not exist!", Toast.LENGTH_SHORT).show();
                 }
                 else {

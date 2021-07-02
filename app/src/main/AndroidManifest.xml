@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".ApprovalWait"></activity>
+        <activity android:name=".Activity.ApprovalFinish"></activity>
+        <activity android:name=".Activity.ApprovalWait" />
         <activity android:name=".Activity.HomeFunction.FirstAidResult" />
         <activity android:name=".Activity.HomeFunction.FirstaidActivity" />
         <activity android:name=".Activity.HomeFunction.ProcurementActivity" />

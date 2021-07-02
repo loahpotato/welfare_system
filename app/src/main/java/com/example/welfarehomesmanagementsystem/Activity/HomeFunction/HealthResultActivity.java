@@ -58,9 +58,9 @@ public class HealthResultActivity extends AppCompatActivity {
         else{
             for (HealthCheck h : healthList) {
             ItemList showResult=new ItemList(this,null);
-            showResult.setName(h.getName());
-            showResult.setDate(h.getDate());
-            showResult.setHospital(h.getHospital());
+            showResult.setTitleContent(h.getName());
+            showResult.setInfoContent1(h.getDate());
+            showResult.setInfoContent2(h.getHospital());
             showResult.setLine(3,0xFF0F9EB1);
             health.addView(showResult);
             }

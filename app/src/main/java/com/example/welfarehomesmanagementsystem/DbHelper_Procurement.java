@@ -63,7 +63,7 @@ public class DbHelper_Procurement extends SQLiteOpenHelper {
     }
     public Cursor getDataByUser(String userId){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE STAFF = ?",  new String[]{userId});
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE Staff = ?",  new String[]{userId});
         return result;
     }
 

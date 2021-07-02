@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
             <TextView
+                android:id="@+id/list_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -23,9 +24,9 @@
                 android:fontFamily="sans-serif-condensed"
                 android:textFontWeight="1000"
                 android:textColor="@color/teal_700"
-                android:text="Name: "/>
+                android:text="Name:"/>
             <TextView
-                android:id="@+id/health_result_name"
+                android:id="@+id/list_title_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
             <TextView
+                android:id="@+id/list_info1_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -47,7 +49,7 @@
                 android:textFontWeight="500"
                 android:text="Date: "/>
             <TextView
-                android:id="@+id/health_result_date"
+                android:id="@+id/list_info1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -61,6 +63,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp">
             <TextView
+                android:id="@+id/list_info2_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -68,7 +71,7 @@
                 android:textFontWeight="500"
                 android:text="Hospitals: "/>
             <TextView
-                android:id="@+id/health_result_hospital"
+                android:id="@+id/list_info2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
