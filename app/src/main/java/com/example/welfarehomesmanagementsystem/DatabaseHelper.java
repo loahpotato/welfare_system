@@ -152,4 +152,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
+    public int getPositionById(String uid){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM USERS WHERE userId = ?",  new String[]{uid});
+        return result.getInt(3);
+    }
+
 }

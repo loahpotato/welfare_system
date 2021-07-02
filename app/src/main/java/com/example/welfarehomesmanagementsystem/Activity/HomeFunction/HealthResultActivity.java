@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,6 +59,9 @@ public class HealthResultActivity extends AppCompatActivity {
             for (HealthCheck h : healthList) {
             ItemList showResult=new ItemList(this,null);
             showResult.setName(h.getName());
+            showResult.setDate(h.getDate());
+            showResult.setHospital(h.getHospital());
+            showResult.setLine(3,0xFF0F9EB1);
             health.addView(showResult);
             }
         }

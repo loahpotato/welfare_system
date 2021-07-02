@@ -2,15 +2,15 @@
 <resources >
     <style name="home_layout_style">
     <item name="android:layout_gravity">center</item>
-    <item name="android:layout_margin">2dp</item>
-    <item name="android:padding">2dp</item>
+    <item name="android:layout_margin">0dp</item>
+    <item name="android:padding">1dp</item>
     <item name="android:orientation">vertical</item>
     </style>
 
     <style name="home_button_text_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginTop">2dp</item>
         <item name="android:maxLines">2</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:textAlignment">center</item>
@@ -22,10 +22,10 @@
     </style>
 
     <style name="home_button_style">
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">58dp</item>
+        <item name="android:layout_height">58dp</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:padding">5dp</item>
+        <item name="android:padding">6dp</item>
         <item name="android:scaleType">fitCenter</item>
         <item name="android:background">@drawable/home_button_bg</item>
     </style>

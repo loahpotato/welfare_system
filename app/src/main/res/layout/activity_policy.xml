@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.PolicyActivity">
+    tools:context=".Activity.SettingPage.PolicyActivity">
     <com.example.welfarehomesmanagementsystem.widget.TitleLayout
         android:id="@+id/policy_title"
         android:layout_width="match_parent"

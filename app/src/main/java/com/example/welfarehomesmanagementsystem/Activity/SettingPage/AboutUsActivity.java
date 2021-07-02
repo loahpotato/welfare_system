@@ -1,4 +1,4 @@
-package com.example.welfarehomesmanagementsystem.Activity;
+package com.example.welfarehomesmanagementsystem.Activity.SettingPage;
 
 import androidx.appcompat.app.AppCompatActivity;
 

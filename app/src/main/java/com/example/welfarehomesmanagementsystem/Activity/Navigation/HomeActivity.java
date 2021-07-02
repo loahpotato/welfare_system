@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.ApprovalStatusActivity;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.CovidTips;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.FirstaidActivity;
 import com.example.welfarehomesmanagementsystem.Activity.HomeFunction.HealthResultActivity;
@@ -20,7 +21,7 @@ import com.example.welfarehomesmanagementsystem.R;
 
 public class HomeActivity extends Fragment{
     private ImageView covid;
-    private ImageButton health;
+    private ImageButton health, approval;
     private ImageButton resident;
     private ImageButton firstAid;
     @Nullable
@@ -60,6 +61,15 @@ public class HomeActivity extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), FirstaidActivity.class);
+                startActivity(i);
+            }
+        });
+
+        approval = (ImageButton) view.findViewById(R.id.home_approval);
+        approval.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), ApprovalStatusActivity.class);
                 startActivity(i);
             }
         });

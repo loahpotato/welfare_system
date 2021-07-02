@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.welfarehomesmanagementsystem.Activity.AboutUsActivity;
-import com.example.welfarehomesmanagementsystem.Activity.AppVersionActivity;
-import com.example.welfarehomesmanagementsystem.Activity.HelpActivity;
-import com.example.welfarehomesmanagementsystem.Activity.PolicyActivity;
+import com.example.welfarehomesmanagementsystem.Activity.SettingPage.AboutUsActivity;
+import com.example.welfarehomesmanagementsystem.Activity.SettingPage.AppVersionActivity;
+import com.example.welfarehomesmanagementsystem.Activity.SettingPage.HelpActivity;
+import com.example.welfarehomesmanagementsystem.Activity.SettingPage.PolicyActivity;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 import com.example.welfarehomesmanagementsystem.R;
 

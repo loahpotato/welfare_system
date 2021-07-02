@@ -19,13 +19,14 @@ public class DbHelper_Procurement extends SQLiteOpenHelper {
     public static final String COLUMN_5 = "Manager";
     public static final String COLUMN_6 = "Date";
     public static final String COLUMN_7 = "Others";
+    public static final String COLUMN_8 = "Status";
     public DbHelper_Procurement(@Nullable Context context) {
         super(context,DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME+"(Item TEXT, Amount INT, Price TEXT,Staff TEXT,Manager TEXT, Date TEXT, Others TEXT)");
+        db.execSQL("create table "+TABLE_NAME+"(Item TEXT, Amount INT, Price TEXT,Staff TEXT,Manager TEXT, Date TEXT, Others TEXT, Status TEXT)");
     }
 
     @Override
@@ -53,6 +54,7 @@ public class DbHelper_Procurement extends SQLiteOpenHelper {
         contentValues.put(COLUMN_5,manager);
         contentValues.put(COLUMN_6,date);
         contentValues.put(COLUMN_7,others);
+        contentValues.put(COLUMN_8,"Waiting");
         long result = db.insert(TABLE_NAME,null,contentValues);
         if(result ==-1)
             return false;
@@ -71,8 +73,8 @@ public class DbHelper_Procurement extends SQLiteOpenHelper {
         return result;
     }
 
-    public Integer deleteData(String name){
+    public Integer deleteData(String rid){
         SQLiteDatabase db =getWritableDatabase();
-        return db.delete(TABLE_NAME,"NAME = ?", new String[]{name});
+        return db.delete(TABLE_NAME,"rowid = ?", new String[]{rid});
     }
 }

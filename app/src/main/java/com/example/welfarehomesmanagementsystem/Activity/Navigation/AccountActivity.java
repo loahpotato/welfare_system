@@ -2,7 +2,6 @@ package com.example.welfarehomesmanagementsystem.Activity.Navigation;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
@@ -17,13 +16,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.welfarehomesmanagementsystem.Activity.AboutUsActivity;
 import com.example.welfarehomesmanagementsystem.Activity.LoginActivity;
 import com.example.welfarehomesmanagementsystem.Activity.PasswordModifier;
 import com.example.welfarehomesmanagementsystem.Activity.ProfileActivity;
 import com.example.welfarehomesmanagementsystem.Activity.SignUpActivity;
 import com.example.welfarehomesmanagementsystem.DatabaseHelper;
-import com.example.welfarehomesmanagementsystem.Entity.HealthCheck;
 import com.example.welfarehomesmanagementsystem.Entity.User;
 import com.example.welfarehomesmanagementsystem.R;
 
