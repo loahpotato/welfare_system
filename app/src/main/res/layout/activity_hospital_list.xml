@@ -10,7 +10,9 @@
         android:id="@+id/hospital_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:padding="20dp"
         android:layout_width="match_parent"
@@ -260,5 +262,6 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

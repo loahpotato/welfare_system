@@ -13,4 +13,5 @@
     <string name="appversion">App Version</string>
     <string name="update_profile">Update Profile</string>
     <string name="procure">Procument Approval</string>
+    <string name="help">Help</string>
 </resources>

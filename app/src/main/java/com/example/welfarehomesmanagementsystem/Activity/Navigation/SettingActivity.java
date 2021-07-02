@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.welfarehomesmanagementsystem.Activity.AboutUsActivity;
 import com.example.welfarehomesmanagementsystem.Activity.AppVersionActivity;
+import com.example.welfarehomesmanagementsystem.Activity.HelpActivity;
 import com.example.welfarehomesmanagementsystem.Activity.PolicyActivity;
 import com.example.welfarehomesmanagementsystem.ActivityCollecctor;
 import com.example.welfarehomesmanagementsystem.R;
@@ -43,6 +44,7 @@ public class SettingActivity extends Fragment {
         about = view.findViewById(R.id.aboutus);
         policy = view.findViewById(R.id.policy);
         version = view.findViewById(R.id.Version);
+        help = view.findViewById(R.id.help);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +65,14 @@ public class SettingActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), AppVersionActivity.class);
+                startActivity(i);
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), HelpActivity.class);
                 startActivity(i);
             }
         });

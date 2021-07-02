@@ -80,7 +80,10 @@
             android:layout_marginStart="15dp"
             android:hint="Please choose a date "
             android:textSize="20sp"
-            android:editable="false"/>
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -175,6 +178,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:hint="Please select a hospital "
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:textSize="20dp"></EditText>
         <TextView
             android:layout_width="wrap_content"

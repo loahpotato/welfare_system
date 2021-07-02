@@ -12,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".Activity.HomeFunction.FirstAidResult"/>
-        <activity android:name=".Activity.HomeFunction.FirstaidActivity"/>
-        <activity android:name=".Activity.HomeFunction.ProcurementActivity"/>
+        <activity android:name=".Activity.HelpActivity"></activity>
+        <activity android:name=".Activity.HomeFunction.FirstAidResult" />
+        <activity android:name=".Activity.HomeFunction.FirstaidActivity" />
+        <activity android:name=".Activity.HomeFunction.ProcurementActivity" />
         <activity android:name=".Activity.Edit.EditPhone" />
         <activity android:name=".Activity.Edit.EditAddress" />
         <activity android:name=".Activity.Edit.EditName" />
