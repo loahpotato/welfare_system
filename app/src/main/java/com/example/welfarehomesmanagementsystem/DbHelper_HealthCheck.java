@@ -79,8 +79,8 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         return result;
     }
 
-    public Integer deleteData(String name){
+    public Integer deleteData(String rid, String name){
         SQLiteDatabase db =getWritableDatabase();
-        return db.delete(TABLE_NAME,"NAME = ?", new String[]{name});
+        return db.delete(TABLE_NAME,"STAFF = ? AND NAME = ?" , new String[]{rid, name});
     }
 }

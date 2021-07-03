@@ -1,13 +1,17 @@
 package com.example.welfarehomesmanagementsystem.Activity.HomeFunction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,6 +52,7 @@ public class HealthResultActivity extends AppCompatActivity {
             HealthCheck h =new HealthCheck(_name,_date,_age,_contact,_hospital,_staff);
             healthList.add(h);
         }
+
         LinearLayout health = (LinearLayout) findViewById(R.id.layout_health_result);
 
         if(healthList.isEmpty()){
@@ -63,10 +68,27 @@ public class HealthResultActivity extends AppCompatActivity {
             showResult.setInfoContent2(h.getHospital());
             showResult.setLine(3,0xFF0F9EB1);
             health.addView(showResult);
+
+                Button delete = new Button(HealthResultActivity.this);
+                delete.setText("Delete");
+                delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int deleted = DB.deleteData(currentUid,h.getName());
+                        if(deleted == 1){
+                            Toast.makeText(HealthResultActivity.this,"Appointment is deleted",Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(HealthResultActivity.this,"No appointment",Toast.LENGTH_SHORT).show();
+                        }
+                        Intent i = new Intent(HealthResultActivity.this,HealthResultActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+                health.addView(delete);
+
             }
         }
-
-
-
     }
 }
