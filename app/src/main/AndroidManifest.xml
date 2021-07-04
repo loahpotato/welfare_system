@@ -7,16 +7,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/hand"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/hand"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelfareHomesManagementSystem">
-        <activity android:name=".widget.ItemDetail"></activity>
+        <activity android:name=".Activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.ItemDetail"
+            tools:ignore="Instantiatable" />
         <activity android:name=".Activity.AllowApprovalActivity" />
         <activity android:name=".Activity.HomeFunction.ViewApprovalActivity" />
-        <activity android:name=".Activity.ApprovalFinish" />
-        <activity android:name=".Activity.ApprovalWait" />
+        <activity android:name=".Activity.ApprovalFinish"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".Activity.ApprovalWait"
+            tools:ignore="Instantiatable" />
         <activity android:name=".Activity.HomeFunction.FirstAidResult" />
         <activity android:name=".Activity.HomeFunction.FirstaidActivity" />
         <activity android:name=".Activity.HomeFunction.ProcurementActivity" />
@@ -32,11 +42,7 @@
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.HomeFunction.ApprovalStatusActivity" />
         <activity android:name=".Activity.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.PasswordModifier" />
         <activity android:name=".Activity.SettingPage.PolicyActivity" />

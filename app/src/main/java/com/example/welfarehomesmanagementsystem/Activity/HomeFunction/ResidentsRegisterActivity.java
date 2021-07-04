@@ -24,9 +24,9 @@ import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 import java.util.Calendar;
 
 public class ResidentsRegisterActivity extends AppCompatActivity {
-    EditText name,date,age,relative, contact, note;
-    Button submit;
-    TextView resident_chooseDate;
+    private EditText id, name,date,age,relative, contact, note;
+    private Button submit;
+    private TextView resident_chooseDate;
     String currentUid;
     private String gender;
     private RadioGroup radioGroup;
@@ -38,7 +38,9 @@ public class ResidentsRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_residents_register);
         TitleLayout t=findViewById(R.id.title_residents_register);
+        t.setT(R.string.resident_register);
 
+        id = findViewById(R.id.resident_id);
         name = findViewById(R.id.resident_name);
         date = findViewById(R.id.resident_date);
         resident_chooseDate = findViewById(R.id.resident_chooseDate);
@@ -82,7 +84,8 @@ public class ResidentsRegisterActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String _name,_date,_age,_relative, _contact, _note;
+                String _id,_name,_date,_age,_relative, _contact, _note;
+                _id=id.getText().toString();
                 _name=name.getText().toString();
                 _date=date.getText().toString();
                 _age=age.getText().toString();
@@ -94,8 +97,8 @@ public class ResidentsRegisterActivity extends AppCompatActivity {
                     Toast.makeText(ResidentsRegisterActivity.this, "Please enter necessary fields", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    if(DB.checkRepeat(name.getText().toString(),age.getText().toString(),contact.getText().toString())) {
-                        boolean isInserted = DB.insertData(_name, _date, gender, _age,_relative, _contact, _note, currentUid);
+                    if(DB.checkRepeat(_id) ){
+                        boolean isInserted = DB.insertData(_id, _name, _date, gender, _age,_relative, _contact, _note, currentUid);
                         if (isInserted)
                             Toast.makeText(ResidentsRegisterActivity.this, "Residents Register successfully!", Toast.LENGTH_SHORT).show();
                         else

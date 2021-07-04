@@ -1,6 +1,7 @@
 package com.example.welfarehomesmanagementsystem.Entity;
 
 public class HealthCheck {
+    private String id;
     public String name;
     public String date;
     public String age;
@@ -8,13 +9,22 @@ public class HealthCheck {
     public String hospital;
     public String staff;
 
-    public HealthCheck(String name, String date, String age, String contact, String hospital, String staff) {
+    public HealthCheck(String id, String name, String date, String age, String contact, String hospital, String staff) {
+        this.id = id;
         this.name = name;
         this.date = date;
         this.age = age;
         this.contact = contact;
         this.hospital = hospital;
         this.staff = staff;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

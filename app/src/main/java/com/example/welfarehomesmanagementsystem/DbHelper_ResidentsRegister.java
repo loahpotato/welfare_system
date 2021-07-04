@@ -12,6 +12,7 @@ public class DbHelper_ResidentsRegister extends SQLiteOpenHelper {
     //Declare variable name for database, table and column
     public static final String DATABASE_NAME = "ResidentsRegister.db";
     public static final String TABLE_NAME = "ResidentsRegister_table";
+    public static final String COLUMN_0 = "ID";
     public static final String COLUMN_1 = "NAME";
     public static final String COLUMN_2 = "DATE";
     public static final String COLUMN_3 = "GENDER";
@@ -26,7 +27,7 @@ public class DbHelper_ResidentsRegister extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME+"(NAME TEXT, DATE TEXT, GENDER TEXT,AGE TEXT,RELATIVE TEXT, CONTACT TEXT, NOTE TEXT, CURRENT_USER TEXT)");
+        db.execSQL("create table "+TABLE_NAME+"(ID TEXT primary key, NAME TEXT, DATE TEXT, GENDER TEXT,AGE TEXT,RELATIVE TEXT, CONTACT TEXT, NOTE TEXT, CURRENT_USER TEXT)");
     }
 
     @Override
@@ -44,9 +45,10 @@ public class DbHelper_ResidentsRegister extends SQLiteOpenHelper {
         //if not exist, we can parse the onCreate method to run
         onCreate(db);
     }
-    public boolean insertData(String name,String date, String gender,String age, String relative, String contact, String note, String current_user){
+    public boolean insertData(String id, String name,String date, String gender,String age, String relative, String contact, String note, String current_user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_0,id);
         contentValues.put(COLUMN_1,name);
         contentValues.put(COLUMN_2,date);
         contentValues.put(COLUMN_3,gender);
@@ -61,24 +63,33 @@ public class DbHelper_ResidentsRegister extends SQLiteOpenHelper {
         else
             return true;
     }
-    public Cursor getDataByUser(String userId){
+    public Cursor getDataById(String id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE STAFF = ?",  new String[]{userId});
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE ID = ?",  new String[]{id});
         return result;
     }
 
-    public boolean checkRepeat(String name, String age, String contact){
+    public boolean checkMatch(String id, String name, String age){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE NAME = ?",  new String[]{name});
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE ID = ?",  new String[]{id});
         while(result.moveToNext()){
-            if(result.getString(4).equals(age) && result.getString(6).equals(contact))
-                return false;
+            if(result.getString(1).equals(name) && result.getString(4).equals(age))
+                return true;
         }
-        return true;
+        return false;
+    }
+    public boolean checkRepeat(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE ID = ?",  new String[]{id});
+        if (result.getCount() > 0){
+            return false;
+        }
+        else
+            return true;
     }
 
-    public Integer deleteData(String name){
+    public Integer deleteData(String id){
         SQLiteDatabase db =getWritableDatabase();
-        return db.delete(TABLE_NAME,"NAME = ?", new String[]{name});
+        return db.delete(TABLE_NAME,"ID = ?", new String[]{id});
     }
 }

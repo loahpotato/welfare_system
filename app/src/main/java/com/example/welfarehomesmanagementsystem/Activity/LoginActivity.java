@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("currentUserId",userId);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     }else{
                         editor.clear();
                         Toast.makeText(LoginActivity.this,"Invalid Credentials",Toast.LENGTH_LONG).show();

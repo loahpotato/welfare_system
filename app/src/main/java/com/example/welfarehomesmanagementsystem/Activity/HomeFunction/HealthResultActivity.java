@@ -43,13 +43,14 @@ public class HealthResultActivity extends AppCompatActivity {
         String currentUid= pref.getString("currentUserId","");
         Cursor result=DB.getDataByUser(currentUid);
         while(result.moveToNext()){
-            String _name = result.getString(0);
-            String _date = result.getString(1);
-            String _age = result.getString(2);
-            String _contact = result.getString(3);
-            String _hospital = result.getString(4);
-            String _staff = result.getString(5);
-            HealthCheck h =new HealthCheck(_name,_date,_age,_contact,_hospital,_staff);
+            String _id = result.getString(0);
+            String _name = result.getString(1);
+            String _date = result.getString(2);
+            String _age = result.getString(3);
+            String _contact = result.getString(4);
+            String _hospital = result.getString(5);
+            String _staff = result.getString(6);
+            HealthCheck h =new HealthCheck(_id,_name,_date,_age,_contact,_hospital,_staff);
             healthList.add(h);
         }
 
@@ -62,19 +63,19 @@ public class HealthResultActivity extends AppCompatActivity {
         }
         else{
             for (HealthCheck h : healthList) {
-            ItemList showResult=new ItemList(this,null);
-            showResult.setTitleContent(h.getName());
-            showResult.setInfoContent1(h.getDate());
-            showResult.setInfoContent2(h.getHospital());
-            showResult.setLine(3,0xFF0F9EB1);
-            health.addView(showResult);
+                ItemList showResult=new ItemList(this,null);
+                showResult.setTitleContent(h.getName());
+                showResult.setInfoContent1(h.getDate());
+                showResult.setInfoContent2(h.getHospital());
+                showResult.setLine(3,0xFF0F9EB1);
+                showResult.setTitleColor(0xFF0F9EB1);
+                health.addView(showResult);
 
-                Button delete = new Button(HealthResultActivity.this);
-                delete.setText("Delete");
-                delete.setOnClickListener(new View.OnClickListener() {
+                showResult.setNote("Delete");
+                showResult.getNote_bg().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int deleted = DB.deleteData(currentUid,h.getName());
+                        int deleted = DB.deleteData(h.getId(),h.getHospital(),h.getDate());
                         if(deleted == 1){
                             Toast.makeText(HealthResultActivity.this,"Appointment is deleted",Toast.LENGTH_SHORT).show();
                         }
@@ -86,8 +87,6 @@ public class HealthResultActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-                health.addView(delete);
-
             }
         }
     }

@@ -12,6 +12,7 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
     //Declare variable name for database, table and column
     public static final String DATABASE_NAME = "HealthCheckAppointment.db";
     public static final String TABLE_NAME = "HealthCheckAppointment_table";
+    public static final String COLUMN_0 = "PATIENT_ID";
     public static final String COLUMN_1 = "NAME";
     public static final String COLUMN_2 = "DATE";
     public static final String COLUMN_3 = "AGE";
@@ -24,7 +25,7 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME+"(NAME TEXT, DATE TEXT, AGE TEXT,CONTACT TEXT,HOSPITAL TEXT, STAFF TEXT)");
+        db.execSQL("create table "+TABLE_NAME+"(PATIENT_ID TEXT, NAME TEXT, DATE TEXT, AGE TEXT,CONTACT TEXT,HOSPITAL TEXT, STAFF TEXT)");
     }
 
     @Override
@@ -42,9 +43,10 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         //if not exist, we can parse the onCreate method to run
         onCreate(db);
     }
-    public boolean insertData(String name,String date, String age,String contact, String hospital, String staff){
+    public boolean insertData(String pid, String name,String date, String age,String contact, String hospital, String staff){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_0,pid);
         contentValues.put(COLUMN_1,name);
         contentValues.put(COLUMN_2,date);
         contentValues.put(COLUMN_3,age);
@@ -63,11 +65,11 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         return result;
     }
 
-    public boolean checkRepeat(String name, String date, String hospital){
+    public boolean checkRepeat(String pid, String date, String hospital){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE NAME = ?",  new String[]{name});
+        Cursor result = db.rawQuery("SELECT *  FROM "  + TABLE_NAME + " WHERE PATIENT_ID = ?",  new String[]{pid});
         while(result.moveToNext()){
-            if(result.getString(1).equals(date) && result.getString(4).equals(hospital))
+            if(result.getString(2).equals(date) && result.getString(5).equals(hospital))
                 return false;
         }
         return true;
@@ -79,8 +81,8 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
         return result;
     }
 
-    public Integer deleteData(String rid, String name){
+    public Integer deleteData(String pid, String hospital,String name){
         SQLiteDatabase db =getWritableDatabase();
-        return db.delete(TABLE_NAME,"STAFF = ? AND NAME = ?" , new String[]{rid, name});
+        return db.delete(TABLE_NAME,"PATIENT_ID = ? AND HOSPITAL = ? AND DATE = ?" , new String[]{pid,hospital,name});
     }
 }

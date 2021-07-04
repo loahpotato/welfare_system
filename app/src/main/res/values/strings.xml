@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Welfare Homes Management System</string>
+    <string name="app_name">WelService</string>
     <string name="home">Home</string>
     <string name="covidTips">COVID-19 Prevention Tips</string>
     <string name="aboutUs">About Us</string>
@@ -17,4 +17,5 @@
     <string name="approalStatus">Procument Approval Status</string>
     <string name="view_approval">View Approval</string>
     <string name="approve">Approve</string>
+    <string name="resident_register">Resident Register</string>
 </resources>

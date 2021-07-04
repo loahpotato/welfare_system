@@ -32,7 +32,12 @@ public class ItemList extends LinearLayout {
         note=findViewById(R.id.list_note);
         note_bg=findViewById(R.id.list_note_bg);
         }
-    public void setLine(int width,int color){
+
+    public LinearLayout getNote_bg() {
+        return note_bg;
+    }
+
+    public void setLine(int width, int color){
         GradientDrawable myGrad = (GradientDrawable)round.getBackground();
         myGrad.setStroke(width,color);
     }
