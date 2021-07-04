@@ -20,7 +20,7 @@ public class DbHelper_HealthCheck extends SQLiteOpenHelper {
     public static final String COLUMN_5 = "HOSPITAL";
     public static final String COLUMN_6 = "STAFF";
     public DbHelper_HealthCheck(@Nullable Context context) {
-        super(context,DATABASE_NAME, null, 1);
+        super(context,DATABASE_NAME, null, 2);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class DbHelper_ResidentsRegister extends SQLiteOpenHelper {
     public static final String COLUMN_7 = "NOTE";
     public static final String COLUMN_8 = "CURRENT_USER";
     public DbHelper_ResidentsRegister(@Nullable Context context) {
-        super(context,DATABASE_NAME, null, 2);
+        super(context,DATABASE_NAME, null, 3);
     }
 
     @Override
