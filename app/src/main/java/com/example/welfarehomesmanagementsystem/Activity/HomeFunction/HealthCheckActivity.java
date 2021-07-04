@@ -101,7 +101,8 @@ public class HealthCheckActivity extends AppCompatActivity {
                 contact1=contact.getText().toString();
                 hospital1=hospital.getText().toString();
                 date1=date.getText().toString();
-
+                AlertDialog.Builder dialog = new AlertDialog.Builder(HealthCheckActivity.this);
+                dialog.setTitle("Health Check Appointment");
                 if (id1.equals("")||name1.equals("")||age1.equals("")||contact1.equals("")||hospital1.equals("")||date1.equals("")) {
                     Toast.makeText(HealthCheckActivity.this, "Please enter all fields", Toast.LENGTH_LONG).show();
                 }
@@ -110,8 +111,6 @@ public class HealthCheckActivity extends AppCompatActivity {
                         if(DB.checkRepeat(id1,date1,hospital1)) {
                             boolean isInserted = DB.insertData(id1,name1, date1, age1, contact1, hospital1, currentUid);
                             if (isInserted) {
-                                AlertDialog.Builder dialog = new AlertDialog.Builder(HealthCheckActivity.this);
-                                dialog.setTitle("Health Check Appointment");
                                 dialog.setMessage("Make appointment successfully");
                                 dialog.setCancelable(false);
                                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -121,11 +120,13 @@ public class HealthCheckActivity extends AppCompatActivity {
                                         name.setText("");
                                         contact.setText("");
                                         date.setText("");
+                                        age.setText("");
                                         hospital.setText("");
                                         InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                                         mInputMethodManager.hideSoftInputFromWindow(HealthCheckActivity.this.getCurrentFocus().getWindowToken(), 0);
                                     }
                                 });
+                                dialog.show();
                             }
                             else
                                 Toast.makeText(HealthCheckActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
