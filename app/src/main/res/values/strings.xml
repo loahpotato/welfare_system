@@ -12,9 +12,9 @@
     <string name="healthresult">Health Check Appointment List</string>
     <string name="appversion">App Version</string>
     <string name="update_profile">Update Profile</string>
-    <string name="procure">Procument Approval</string>
+    <string name="procure">Procurement Request</string>
     <string name="help">Help</string>
-    <string name="approalStatus">Procument Approval Status</string>
+    <string name="approalStatus">Approval Status</string>
     <string name="view_approval">View Approval</string>
     <string name="approve">Approve</string>
     <string name="resident_register">Resident Register</string>

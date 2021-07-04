@@ -27,12 +27,11 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApprovalStatusActivity extends AppCompatActivity {
+import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 
-    private TabLayout mTabLayout;
-    private ViewPager mViewPager;
-    private List<Fragment> mFragment = new ArrayList<>();
-    private List<String> mTitleList = new ArrayList<String>();//页卡标题集合
+public class ApprovalStatusActivity extends AppCompatActivity {
+    private final List<Fragment> mFragment = new ArrayList<>();//fragments
+    private final List<String> mTitleList = new ArrayList<String>();//tab titles
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,20 +39,21 @@ public class ApprovalStatusActivity extends AppCompatActivity {
         TitleLayout t = findViewById(R.id.title_approval_status);
         t.setT(R.string.approalStatus);
 
-        mViewPager = (ViewPager) findViewById(R.id.vp_view);
-        mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.vp_view);
+        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
         mFragment.add(ApprovalWait.newInstance());
         mFragment.add(ApprovalFinish.newInstance());
 
-        //添加页卡标题
+        //add titles
         mTitleList.add("Waiting");
         mTitleList.add("Finished");
 
-        //添加tab选项卡，默认第一个选中
+        //add fragments
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(0)), true);
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(1)));
 
-        mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
+        mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager(),
+                BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @Override
             public Fragment getItem(int position) {
                 return mFragment.get(position);
@@ -76,7 +76,7 @@ public class ApprovalStatusActivity extends AppCompatActivity {
 
         });
 
-        //将TabLayout和ViewPager关联起来
+        //set relation between TabLayout and ViewPager
         mTabLayout.setupWithViewPager(mViewPager);
 
     }
