@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
+import com.example.welfarehomesmanagementsystem.Entity.User;
+
 import org.w3c.dom.Text;
 
 import java.util.regex.Matcher;
@@ -27,6 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("CREATE TABLE USERS(userId TEXT primary key, username TEXT, password TEXT, position INT DEFAULT 0, birthday TEXT, phone TEXT, gender TEXT, address TEXT)");
+        MyDB.execSQL("insert into USERS(userId, username, password, position, gender)values('admin','admin','admin1',1,'NULL')");
     }
 
     //Drop the table if exists
