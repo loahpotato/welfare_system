@@ -146,7 +146,7 @@
             android:layout_marginStart="15dp"
             android:textSize="18sp"
             android:layout_gravity="center"
-            android:hint="Select people number" />
+            android:hint="Select number of patients" />
     </LinearLayout>
 
     <LinearLayout
