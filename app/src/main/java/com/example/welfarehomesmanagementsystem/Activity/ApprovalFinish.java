@@ -77,8 +77,8 @@ public class ApprovalFinish extends Fragment {
                     showResult.setNote("Not Approved");
                 }
                 else{
-                    showResult.setLine(6,0xFF63E1C3);
-                    showResult.setTitleColor(0xFF63E1C3);
+                    showResult.setLine(6,0xFF069A7C);
+                    showResult.setTitleColor(0xFF069A7C);
                     showResult.setNote("Approved");
                 }
                 finish.addView(showResult);

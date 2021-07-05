@@ -5,14 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.HomeFunction.FirstaidActivity">
+    tools:context=".Activity.HomeFunction.FirstaidActivity"
+    android:background="#CBEDEDED">
 
     <com.example.welfarehomesmanagementsystem.widget.TitleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title_firstAid"/>
-
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- First-aid Search -"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="18sp"
+            android:textFontWeight="800"
+            android:textColor="@color/light_red"/>
+            <View
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray" />
+        </LinearLayout>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="-0dp"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/ambulance"
+        android:scaleType="fitXY"/>
+    </LinearLayout>
+
+    <!--LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -37,128 +72,118 @@
             android:textColor="@color/red"
             android:textSize="30dp" />
 
-    </LinearLayout>
-
+    </LinearLayout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
 
-        <ImageView
+        android:background="@color/white"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/edit_text">
+
+        <!--ImageView
             android:id="@+id/imageView2"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="30dp"
-            app:srcCompat="@mipmap/address" />
-
-
+            app:srcCompat="@mipmap/address" /-->
         <TextView
             android:id="@+id/firstAid_address"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="17dp"
-            android:gravity="center"
-            android:background="@drawable/edit_text"
+            android:textSize="18sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:background="@color/white"
             android:hint="Select your address" />
-
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_height="45dp">
 
-        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+        <!--com.example.welfarehomesmanagementsystem.widget.RoundImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="30dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_donation"
-            android:background="@color/blue"/>
+            android:background="@color/blue"/-->
 
         <TextView
             android:id="@+id/firstAid_symptom"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="17dp"
-            android:gravity="center"
-            android:background="@drawable/edit_text"
+            android:layout_marginStart="15dp"
+            android:textSize="18sp"
+            android:layout_gravity="center_vertical"
             android:hint="Select the symptom" />
-
-
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_height="45dp"
+        android:background="@drawable/edit_text">
 
 
-        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+        <!--com.example.welfarehomesmanagementsystem.widget.RoundImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="30dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_baseline_account_circle_24"
-           />
+           /-->
 
         <TextView
             android:id="@+id/firstAid_people"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="17dp"
-            android:gravity="center"
-            android:background="@drawable/edit_text"
+            android:layout_marginStart="15dp"
+            android:textSize="18sp"
+            android:layout_gravity="center"
             android:hint="Select people number" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_height="45dp">
 
 
-        <com.example.welfarehomesmanagementsystem.widget.RoundImageView
+        <!--com.example.welfarehomesmanagementsystem.widget.RoundImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="30dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_old"
-            android:background="@color/blue"/>
+            android:background="@color/blue"/-->
 
         <EditText
             android:id="@+id/firstAid_age"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
             android:ems="10"
             android:hint="Enter patient's age"
             android:inputType="number"/>
     </LinearLayout>
+    </LinearLayout>
 
-
-    <Button
+    <android.widget.Button
         android:id="@+id/firstAid_btn"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="50dp"
-        android:text="Search" />
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:text="Search"
+        android:textColor="@color/white"
+        android:background="@drawable/button"/>
 
 
 </LinearLayout>

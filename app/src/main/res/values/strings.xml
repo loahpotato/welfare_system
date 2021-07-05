@@ -18,4 +18,5 @@
     <string name="view_approval">View Approval</string>
     <string name="approve">Approve</string>
     <string name="resident_register">Resident Register</string>
+    <string name="ambulance">Ambulance</string>
 </resources>

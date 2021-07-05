@@ -16,6 +16,7 @@ import com.bigkoo.pickerview.view.OptionsPickerView;
 
 import com.example.welfarehomesmanagementsystem.DbHelper_FirstAid;
 import com.example.welfarehomesmanagementsystem.R;
+import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,8 @@ public class FirstaidActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firstaid);
+        TitleLayout t=findViewById(R.id.title_firstAid);
+        t.setT(R.string.ambulance);
 
         address = (TextView) findViewById(R.id.firstAid_address);
         symptom = (TextView) findViewById(R.id.firstAid_symptom);

@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".Activity.ProfileActivity"
 android:orientation="vertical"
-android:background="@color/gray">
+android:background="#E6E1E1E1">
 
     <com.example.welfarehomesmanagementsystem.widget.TitleLayout
         android:layout_width="match_parent"
@@ -17,7 +17,8 @@ android:background="@color/gray">
         android:id="@+id/ll_portrait"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp"
         android:paddingBottom="10dp"
         android:background="@color/white">
 

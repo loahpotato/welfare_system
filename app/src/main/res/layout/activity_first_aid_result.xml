@@ -142,8 +142,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="30dp"
-            android:src="@mipmap/ic_ambulance"
-            android:background="@color/blue"/>
+            android:src="@mipmap/icon_ambulance" />
 
         <TextView
             android:layout_width="wrap_content"
