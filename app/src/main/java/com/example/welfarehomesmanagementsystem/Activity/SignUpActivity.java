@@ -109,8 +109,10 @@ public class SignUpActivity extends AppCompatActivity {
                                             radioGroup2.clearCheck();
                                             password.setText("");
                                             rePassword.setText("");
-                                            InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                                            mInputMethodManager.hideSoftInputFromWindow(SignUpActivity.this.getCurrentFocus().getWindowToken(), 0);
+                                            if(SignUpActivity.this.getCurrentFocus()!=null){
+                                                InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                                mInputMethodManager.hideSoftInputFromWindow(SignUpActivity.this.getCurrentFocus().getWindowToken(), 0);
+                                            }
                                         }
                                     });
                                     dialog.show();
