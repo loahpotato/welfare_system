@@ -1,15 +1,18 @@
 package com.example.welfarehomesmanagementsystem.Activity.HomeFunction;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -93,14 +96,34 @@ public class ResidentsRegisterActivity extends AppCompatActivity {
                 _contact=contact.getText().toString();
                 _note=note.getText().toString();
 
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ResidentsRegisterActivity.this);
+                dialog.setTitle("Resident Register");
                 if (_name.equals("")||_date.equals("")||_age.equals("")||_relative.equals("")||_contact.equals("")) {
                     Toast.makeText(ResidentsRegisterActivity.this, "Please enter necessary fields", Toast.LENGTH_LONG).show();
                 }
                 else {
                     if(DB.checkRepeat(_id) ){
                         boolean isInserted = DB.insertData(_id, _name, _date, gender, _age,_relative, _contact, _note, currentUid);
-                        if (isInserted)
-                            Toast.makeText(ResidentsRegisterActivity.this, "Residents Register successfully!", Toast.LENGTH_SHORT).show();
+                        if (isInserted){
+                            dialog.setMessage("Residents Register successfully!");
+                            dialog.setCancelable(false);
+                            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    id.setText("");
+                                    name.setText("");
+                                    contact.setText("");
+                                    date.setText("");
+                                    age.setText("");
+                                    relative.setText("");
+                                    note.setText("");
+                                    radioGroup.clearCheck();
+                                    InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                                    mInputMethodManager.hideSoftInputFromWindow(ResidentsRegisterActivity.this.getCurrentFocus().getWindowToken(), 0);
+                                }
+                            });
+                            dialog.show();
+                        }
                         else
                             Toast.makeText(ResidentsRegisterActivity.this, "Residents Register Fail!", Toast.LENGTH_SHORT).show();
                     }
