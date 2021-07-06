@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"/>
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
     <LinearLayout
         android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -26,39 +27,41 @@
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@mipmap/hospital1"></ImageView>
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/hospital1"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Zn Hospital"
-                    android:textSize="30dp"
-                    android:textColor="@color/black"></TextView>
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
                 <TextView
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="tel: 7758258"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textColor="@color/blue"
                     android:id="@+id/hospital1_tel">
                 </TextView>
             </LinearLayout>
+
             <ImageButton
                 android:id="@+id/hospital1_btn"
-                android:layout_marginStart="15dp"
-                android:background="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/select"
-                android:layout_gravity="center"></ImageButton>
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:background="@color/white"
+                android:src="@mipmap/select"></ImageButton>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,34 +69,35 @@
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/hospital2"></ImageView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Tql Hospital"
-                    android:textSize="30dp"
+                    android:textSize="25sp"
                     android:textColor="@color/black"></TextView>
                 <TextView
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="tel: 5864588"
-                    android:textSize="25dp"
+                    android:textSize="18sp"
                     android:textColor="@color/blue"
                     android:id="@+id/hospital2_tel">
                 </TextView>
             </LinearLayout>
             <ImageButton
                 android:id="@+id/hospital2_btn"
-                android:layout_marginStart="14dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,34 +110,35 @@
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/hospital3"></ImageView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Yjdy Hospital"
-                    android:textSize="30dp"
+                    android:textSize="25sp"
                     android:textColor="@color/black"></TextView>
                 <TextView
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="tel: 6837994"
-                    android:textSize="25dp"
+                    android:textSize="18sp"
                     android:textColor="@color/blue"
                     android:id="@+id/hospital3_tel">
                 </TextView>
             </LinearLayout>
             <ImageButton
                 android:id="@+id/hospital3_btn"
-                android:layout_marginStart="14dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -146,27 +151,28 @@
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/hospital4"></ImageView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Yyds Hospital"
-                    android:textSize="30dp"
+                    android:textSize="25sp"
                     android:textColor="@color/black"></TextView>
                 <TextView
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="tel: 3860374"
-                    android:textSize="25dp"
+                    android:textSize="18sp"
                     android:textColor="@color/blue"
                     android:id="@+id/hospital4_tel">
                 </TextView>
@@ -186,34 +192,35 @@
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/hospital5"></ImageView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Scc Hospital"
-                    android:textSize="30dp"
+                    android:textSize="25sp"
                     android:textColor="@color/black"></TextView>
                 <TextView
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="tel: 2967024"
-                    android:textSize="25dp"
+                    android:textSize="18sp"
                     android:textColor="@color/blue"
                     android:id="@+id/hospital5_tel">
                 </TextView>
             </LinearLayout>
             <ImageButton
                 android:id="@+id/hospital5_btn"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -226,34 +233,35 @@
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/hospital6"></ImageView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Yang Hospital"
-                    android:textSize="30dp"
+                    android:textSize="25sp"
                     android:textColor="@color/black"></TextView>
                 <TextView
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="tel: 6395206"
-                    android:textSize="25dp"
+                    android:textSize="18sp"
                     android:textColor="@color/blue"
                     android:id="@+id/hospital6_tel">
                 </TextView>
             </LinearLayout>
             <ImageButton
                 android:id="@+id/hospital6_btn"
-                android:layout_marginStart="9dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

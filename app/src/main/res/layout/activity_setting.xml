@@ -32,7 +32,7 @@
                 android:textSize="31sp"
                 android:textColor="#80000000"
                 android:fontFamily="sans-serif-black"
-                android:text="Settings" />
+                android:text="Information" />
 
             <TextView
                 android:layout_marginStart="50dp"
@@ -43,7 +43,7 @@
                 android:textSize="30sp"
                 android:textColor="@color/white"
                 android:fontFamily="sans-serif-black"
-                android:text="Settings" />
+                android:text="Information" />
         </FrameLayout>
 
         <LinearLayout
