@@ -19,10 +19,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:justificationMode="inter_word"
                 android:text="Avoid gatherings"
                 android:textColor="@color/black"
@@ -41,10 +43,12 @@
                 />
 
             <TextView
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:justificationMode="inter_word"
                 android:text="Personal hygiene"
                 android:textColor="@color/black"
@@ -63,10 +67,12 @@
                 android:text="Keep rooms clean; open windows often to keep the house ventilated.\nWash hands with running water and soap after returning from public facilities, before eating, and after using the restroom.\nDo not touch eyes with dirty hands." />
 
             <TextView
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:justificationMode="inter_word"
                 android:text="Face mask"
                 android:textColor="@color/black"
@@ -83,10 +89,12 @@
                 android:text="Wear a mask at crowded public spaces.\nCover nose and mouth when sneezing and coughing." />
 
             <TextView
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:justificationMode="inter_word"
                 android:text="Stay vigilant"
                 android:textColor="@color/black"

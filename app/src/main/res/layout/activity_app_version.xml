@@ -41,13 +41,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="        Liu Siyi \n     Liu Liheng \n   Zheng Linfeng \n   Yang Yuchao"
-            android:textSize="25dp"
-            android:layout_marginStart="115dp"/>
+            android:text="Liu Siyi\nLiu Liheng\nZheng Linfeng\nYang Yuchao"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/logo"
-            android:layout_gravity="center"></ImageView>
+            android:layout_gravity="center"/>
     </LinearLayout>
 </LinearLayout>

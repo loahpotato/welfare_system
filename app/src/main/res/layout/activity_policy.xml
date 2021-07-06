@@ -22,10 +22,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:justificationMode="inter_word"
             android:text="Data protect and privacy:"
             android:textColor="@color/black"
@@ -44,10 +46,12 @@
             />
 
         <TextView
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:justificationMode="inter_word"
             android:text="Trademark:"
             android:textColor="@color/black"
@@ -66,10 +70,12 @@
             android:text="When sharing items from the app, such as pictures, they will be combined with the watermark and logo of Arimama." />
 
         <TextView
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:justificationMode="inter_word"
             android:text="Contact policy:"
             android:textColor="@color/black"

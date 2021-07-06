@@ -102,7 +102,7 @@ public class ViewApprovalActivity extends AppCompatActivity {
                     if(itemId==0)
                     {
                         note.setVisibility(View.VISIBLE);
-                        note.setText("No procurement waiting to approve.");
+                        note.setText("No request for approve.");
                     }
                 }
                 break;
