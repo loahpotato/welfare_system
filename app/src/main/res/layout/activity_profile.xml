@@ -65,6 +65,7 @@ android:background="#E6E1E1E1">
         android:id="@+id/ig_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:jt_visible="false"
         app:edt_content="Liu"
         app:paddingLeft="15dp"
         app:title="Name" />

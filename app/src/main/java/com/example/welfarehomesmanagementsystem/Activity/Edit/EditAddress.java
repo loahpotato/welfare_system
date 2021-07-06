@@ -49,9 +49,12 @@ public class EditAddress extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(DB.updateAddress(uid,edit_address.getText().toString())){
+                if(edit_address.getText().toString().equals("")) {
+                    Toast.makeText(EditAddress.this,"Please enter your new address",Toast.LENGTH_LONG).show();
+                }else{
+                    if(DB.updateAddress(uid,edit_address.getText().toString())){
                     Toast.makeText(EditAddress.this,"Address Edited Successfully",Toast.LENGTH_LONG).show();
-                };
+                };}
             }
         });
         //设置监听器

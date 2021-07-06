@@ -43,9 +43,13 @@ public class EditPhone extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(DB.updatePhone(uid,edit_phone.getText().toString())){
-                    Toast.makeText(EditPhone.this,"Phone Edited Successfully",Toast.LENGTH_LONG).show();
-                };
+                if(edit_phone.getText().toString().equals("")){
+                    Toast.makeText(EditPhone.this,"Please enter your phone",Toast.LENGTH_LONG).show();
+                }else {
+                    if (DB.updatePhone(uid, edit_phone.getText().toString())) {
+                        Toast.makeText(EditPhone.this, "Phone Edited Successfully", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
         //设置监听器
