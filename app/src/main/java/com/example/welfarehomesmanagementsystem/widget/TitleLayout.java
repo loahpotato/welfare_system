@@ -16,6 +16,7 @@ import com.example.welfarehomesmanagementsystem.R;
 
 public class TitleLayout extends LinearLayout {
     protected TextView t;
+    protected LinearLayout l;
     public TitleLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.title_back,this);
@@ -27,8 +28,13 @@ public class TitleLayout extends LinearLayout {
             }
         });
         t = (TextView) findViewById(R.id.text_title);
-        }
 
+        l=findViewById(R.id.title_back_color);
+
+    }
+    public void setColor(int t) {
+        this.l.setBackgroundColor(t);
+    }
     public void setT(@StringRes int t) {
         this.t.setText(t);
     }

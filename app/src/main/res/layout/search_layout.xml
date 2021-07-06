@@ -10,48 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="10dp"
+        android:padding="8dp"
         android:orientation="horizontal">
 
         <FrameLayout
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:background="@drawable/outline_rectangle">
-            <EditText
+            <SearchView
                 android:id="@+id/search_et_input"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/ic_baseline_search_24"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
                 android:background="@color/white"
                 android:textSize="18sp"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:hint="Search for services..."/>
+                android:queryHint="Search for services..."/>
 
-            <ImageView
-                android:visibility="gone"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/ic_twotone_highlight_off_24"
-                android:id="@+id/search_iv_delete"
-                android:layout_gravity="right|center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
         </FrameLayout>
 
     </LinearLayout>
 
-    <ListView
-        android:visibility="gone"
-        android:id="@+id/search_lv_tips"
-
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
-    </ListView>
 </LinearLayout>

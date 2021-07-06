@@ -59,7 +59,7 @@ public class HealthResultActivity extends AppCompatActivity {
         if(healthList.isEmpty()){
             TextView note = findViewById(R.id.health_chek_note);
             note.setVisibility(View.VISIBLE);
-            note.setText("No health check report.");
+            note.setText("No health check appointment record.");
         }
         else{
             for (HealthCheck h : healthList) {

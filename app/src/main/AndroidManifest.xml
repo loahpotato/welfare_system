@@ -27,6 +27,7 @@
             tools:ignore="Instantiatable" />
         <activity android:name=".Activity.ApprovalWait"
             tools:ignore="Instantiatable" />
+        <activity android:name=".Activity.HomeFunction.SearchActivity" />
         <activity android:name=".Activity.HomeFunction.FirstAidResult" />
         <activity android:name=".Activity.HomeFunction.FirstaidActivity" />
         <activity android:name=".Activity.HomeFunction.ProcurementActivity" />
@@ -47,6 +48,7 @@
         <activity android:name=".Activity.PasswordModifier" />
         <activity android:name=".Activity.SettingPage.PolicyActivity" />
         <activity android:name=".Activity.SettingPage.AboutUsActivity" />
+        <activity android:name=".Activity.SettingPage.HelpActivity" />
         <activity android:name=".Activity.ProfileActivity" />
         <activity
             android:name=".Activity.Navigation.AccountActivity"

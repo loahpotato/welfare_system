@@ -8,15 +8,11 @@
     android:id="@+id/home"
     tools:context=".Activity.Navigation.HomeActivity">
 
-    <FrameLayout
+    <com.example.welfarehomesmanagementsystem.widget.MySearchView
         android:id="@+id/home_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <include layout="@layout/title" />
-
-        <include layout="@layout/search_layout" />
-    </FrameLayout>
+    </com.example.welfarehomesmanagementsystem.widget.MySearchView>
 
     <ScrollView
         android:layout_below="@+id/home_search"
