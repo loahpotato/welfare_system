@@ -47,6 +47,7 @@
         <activity android:name=".Activity.PasswordModifier" />
         <activity android:name=".Activity.SettingPage.PolicyActivity" />
         <activity android:name=".Activity.SettingPage.AboutUsActivity" />
+        <activity android:name=".Activity.SettingPage.HelpActivity" />
         <activity android:name=".Activity.ProfileActivity" />
         <activity
             android:name=".Activity.Navigation.AccountActivity"
