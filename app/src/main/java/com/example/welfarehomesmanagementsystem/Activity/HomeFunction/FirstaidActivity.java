@@ -9,11 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
 
+import com.example.welfarehomesmanagementsystem.Activity.SignUpActivity;
 import com.example.welfarehomesmanagementsystem.DbHelper_FirstAid;
 import com.example.welfarehomesmanagementsystem.R;
 import com.example.welfarehomesmanagementsystem.widget.TitleLayout;
@@ -117,8 +119,13 @@ public class FirstaidActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(FirstaidActivity.this,FirstAidResult.class);
-                startActivity(i);
+                if(address.getText().toString().equals("") || symptom.getText().toString().equals("") || num.getText().toString().equals("") ){
+                    Toast.makeText(FirstaidActivity.this,"Please enter all fields",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Intent i = new Intent(FirstaidActivity.this,FirstAidResult.class);
+                    startActivity(i);
+                }
             }
         });
 
