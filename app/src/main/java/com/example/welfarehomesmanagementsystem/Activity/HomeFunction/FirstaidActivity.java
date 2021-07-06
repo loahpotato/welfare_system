@@ -143,5 +143,12 @@ public class FirstaidActivity extends AppCompatActivity {
         optionsItems_num.add("3");
         optionsItems_num.add("4");
 
+
+        DB.insertData("ZN Hospital","7758258","ZN Street","10min","ZN District");
+        DB.insertData("Tql Hospital","5864588","Tql Street","12min","Tql District");
+        DB.insertData("Yjdy Hospital","6837994","Yjdy Street","17min","Yjdy District");
+        DB.insertData("Yyds Hospital","3860374","Yyds Street","25min","Yyds District");
+        DB.insertData("Scc Hospital","2967024","Sccc Street","6min","Scc District");
+        DB.insertData("Yang Hospital","6395206","Liu Street","2min","Yang District");
     }
 }

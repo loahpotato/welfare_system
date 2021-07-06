@@ -36,6 +36,17 @@ public class DbHelper_FirstAid extends SQLiteOpenHelper {
         onCreate(MyDB);
     }
 
+    public void insertData(String hName, String hPhone, String hAddress,String arrTime, String address){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("hname", hName);
+        contentValues.put("hphone", hPhone);
+        contentValues.put("haddress",hAddress);
+        contentValues.put("arrtime",arrTime);
+        contentValues.put("address",address);
+        MyDB.insert("HOSPITAL",null,contentValues);
+    }
+
     public Cursor getHospitalByAddress(String address){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("SELECT * FROM HOSPITAL WHERE address = ?",  new String[]{address});
